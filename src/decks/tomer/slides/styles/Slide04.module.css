@@ -1,0 +1,98 @@
+/* Slide 04: Software-Defined Platform */
+
+.platformSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-base);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.platformContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 60px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.platformTitle {
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  margin-bottom: 56px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.platformHighlight {
+  color: var(--brand-600, #ED2738);
+}
+
+.platformChecks {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.platformCheckItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  text-align: left;
+  max-width: 340px;
+}
+
+.platformCheckIcon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  background: var(--brand-600, #ED2738);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light, #FFFFFF);
+  box-shadow: 0 4px 12px rgba(237, 39, 56, 0.25);
+}
+
+.platformCheckTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.platformCheckText {
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--brand-600, #ED2738);
+}
+
+.platformCheckSubtext {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 400;
+  color: var(--neutral-600, #686162);
+  line-height: 1.5;
+}
+
+.platformFooter {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--brand-600, #ED2738);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.platformFooterHighlight {
+  color: var(--brand-600, #ED2738);
+}

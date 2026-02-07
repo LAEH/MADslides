@@ -1,0 +1,264 @@
+/* Slide 14: Infinia Data Store */
+
+.container {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1150px;
+  align-items: flex-start;
+}
+
+.sectionLabel {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark, #201E1E);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+/* Left side - Cluster */
+.clusterSection {
+  flex: 0 0 180px;
+}
+
+.cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border: 2px solid var(--neutral-300, #B7BABA);
+  border-radius: 12px;
+  background: var(--surface-primary);
+}
+
+.serverIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.serverBox {
+  width: 56px;
+  height: 8px;
+  background: var(--deep-blue-700, #455571);
+  border-radius: 2px;
+}
+
+.ellipsis {
+  font-size: 1.5rem;
+  color: var(--neutral-500, #7A7374);
+  letter-spacing: 4px;
+}
+
+/* Right side - Node with CATs */
+.nodeSection {
+  flex: 1;
+}
+
+.nodeBox {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  border: 2px solid var(--neutral-300, #B7BABA);
+  border-radius: 12px;
+  background: var(--surface-primary);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Detailed CAT */
+.catDetailed {
+  flex: 1;
+  min-width: 260px;
+  border: 2px solid var(--brand-400, #FF6572);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface-base);
+}
+
+.catHeader {
+  background: var(--brand-600, #ED2738);
+  color: white;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.catContent {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* BEPtree visualization */
+.beptree {
+  border: 2px solid var(--brand-300, #FF9EA6);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.beptreeLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brand-700, #C41E2A);
+  margin-bottom: 6px;
+}
+
+.beptreeRows {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.beptreeRow {
+  display: flex;
+  gap: 2px;
+}
+
+.beptreeRow span {
+  padding: 3px 6px;
+  font-size: 0.65rem;
+  font-family: 'Geist Mono', monospace;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.key {
+  background: #90CAF9;
+  color: #1565C0;
+  flex: 1;
+}
+
+.phys {
+  background: #A5D6A7;
+  color: #2E7D32;
+  flex: 1;
+}
+
+.extent {
+  background: #81C784;
+  color: #1B5E20;
+  flex: 1.5;
+}
+
+.beptreeDots {
+  font-size: 0.6rem;
+  color: var(--neutral-400, #9C9A94);
+  text-align: center;
+  padding: 2px 0;
+}
+
+/* CAT Services list */
+.catServices {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.catServices span {
+  font-size: 0.7rem;
+  color: var(--neutral-600, #686162);
+  padding: 3px 6px;
+  background: var(--neutral-100, #F0EEEE);
+  border-radius: 4px;
+}
+
+/* Bulk store */
+.bulkStore {
+  border: 2px solid #90CAF9;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.bulkLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1565C0;
+  margin-bottom: 6px;
+}
+
+.bulkBuffers {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bulkBuffers span {
+  font-size: 0.65rem;
+  font-family: 'Geist Mono', monospace;
+  padding: 3px 6px;
+  background: #E3F2FD;
+  color: #1565C0;
+  border-radius: 3px;
+}
+
+.bufferDots {
+  background: transparent !important;
+  color: var(--neutral-400, #9C9A94) !important;
+  text-align: center;
+}
+
+/* Collapsed CATs */
+.catCollapsed {
+  width: 70px;
+  height: 100px;
+  border: 2px solid var(--neutral-300, #B7BABA);
+  border-radius: 8px;
+  background: var(--surface-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catCollapsed span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--neutral-500, #7A7374);
+}
+
+/* NVMe drives */
+.nvmeRow {
+  width: 100%;
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.nvmeDrive {
+  flex: 1;
+  padding: 6px;
+  background: var(--neutral-300, #B7BABA);
+  color: var(--neutral-700, #494343);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.nvmeLabel {
+  display: block;
+  width: 100%;
+  font-size: 0.7rem;
+  color: var(--neutral-500, #7A7374);
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Description */
+.description {
+  margin-top: 20px;
+  text-align: center;
+  max-width: 900px;
+}
+
+.description p {
+  font-size: 0.95rem;
+  color: var(--neutral-600, #686162);
+  line-height: 1.5;
+  margin: 4px 0;
+}

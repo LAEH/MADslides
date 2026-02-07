@@ -1,0 +1,7 @@
+export { default as TitleSlide } from './TitleSlide'
+export { default as SectionSlide } from './SectionSlide'
+export { default as ContentSlide } from './ContentSlide'
+export { default as BulletSlide } from './BulletSlide'
+export { default as FeatureGridSlide } from './FeatureGridSlide'
+export { default as OutlineSlide } from './OutlineSlide'
+export { default as DiagramSlide } from './DiagramSlide'

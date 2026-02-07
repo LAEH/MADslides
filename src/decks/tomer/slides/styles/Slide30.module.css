@@ -1,0 +1,37 @@
+/* Slide 30: Multi-Tenancy */
+
+.featureTable {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.featureTable th,
+.featureTable td {
+  padding: 22px 32px;
+  text-align: left;
+  border: 1px solid var(--neutral-200, #DDDADA);
+}
+
+.featureTable th {
+  background: var(--deep-blue-900, #2E3B4C);
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.featureTable td {
+  background: var(--surface-primary);
+  font-size: 1.25rem;
+  color: var(--text-dark, #201E1E);
+}
+
+.featureTable tr:nth-child(even) td {
+  background: var(--surface-base);
+}
+
+.delivers {
+  color: var(--brand-600, #ED2738) !important;
+  font-weight: 600;
+}

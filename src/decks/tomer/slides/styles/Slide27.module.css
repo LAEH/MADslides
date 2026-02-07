@@ -1,0 +1,53 @@
+/* Slide 27: Containerized Services */
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.category {
+  background: var(--surface-primary);
+  border: 2px solid var(--neutral-200, #DDDADA);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.category h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--deep-blue-800, #32415A);
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--neutral-500, #7A7374);
+  margin-bottom: 20px;
+}
+
+.serviceList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.service {
+  font-size: 1rem;
+  font-family: 'Geist Mono', monospace;
+  padding: 8px 14px;
+  background: var(--deep-blue-900, #2E3B4C);
+  color: white;
+  border-radius: 8px;
+}
+
+.serviceHighlight {
+  font-size: 1rem;
+  font-family: 'Geist Mono', monospace;
+  padding: 8px 14px;
+  background: var(--brand-600, #ED2738);
+  color: white;
+  border-radius: 8px;
+}

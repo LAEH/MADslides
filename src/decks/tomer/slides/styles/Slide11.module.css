@@ -1,0 +1,61 @@
+/* Slide 11: Metadata Challenge */
+
+.storageTypes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.storageCard {
+  padding: 32px;
+  background: var(--surface-primary);
+  border: 2px solid var(--neutral-200, #DDDADA);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.storageCard h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  margin-bottom: 16px;
+}
+
+.storageQuote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--brand-600, #ED2738);
+  margin-bottom: 20px;
+}
+
+.storageDesc {
+  font-size: 1.2rem;
+  color: var(--neutral-600, #686162);
+  line-height: 1.6;
+}
+
+.storageCardHighlight {
+  padding: 32px;
+  background: var(--deep-blue-900, #2E3B4C);
+  border: 2px solid var(--brand-600, #ED2738);
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+}
+
+.storageCardHighlight h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-light, #FFFFFF);
+  margin-bottom: 16px;
+}
+
+.storageCardHighlight .storageQuote {
+  color: var(--brand-300, #FF9EA6);
+}
+
+.storageCardHighlight .storageDesc {
+  color: var(--neutral-200, #DDDADA);
+}

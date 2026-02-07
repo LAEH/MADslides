@@ -1,0 +1,304 @@
+/* Slide 19: BEPtree Comparison */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Cards Row */
+.cardsRow {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card {
+  flex: 1;
+  background: #F8F9FA;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E0E0E0;
+}
+
+.cardDark {
+  background: #2D3748;
+  border-color: #4A5568;
+}
+
+.cardHeader {
+  padding: 12px 16px;
+  background: var(--surface-base);
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.cardDark .cardHeader {
+  background: #1A202C;
+  border-bottom-color: #4A5568;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+}
+
+.cardDark .cardTitle {
+  color: white;
+}
+
+.cardSubtitle {
+  font-size: 0.8rem;
+  color: var(--neutral-500, #7A7374);
+  margin-left: 6px;
+}
+
+.cardDark .cardSubtitle {
+  color: #A0AEC0;
+}
+
+.cardContent {
+  padding: 16px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* B-tree Diagram */
+.btreeDiagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.treeLevel {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.treeNode {
+  display: flex;
+  gap: 2px;
+  background: #4A5568;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.nodeBox {
+  width: 12px;
+  height: 12px;
+  background: #718096;
+  border-radius: 2px;
+}
+
+.leafNode {
+  display: flex;
+  gap: 2px;
+}
+
+.leafGreen { width: 10px; height: 10px; background: #48BB78; border-radius: 2px; }
+.leafOrange { width: 10px; height: 10px; background: #ED8936; border-radius: 2px; }
+.leafRed { width: 10px; height: 10px; background: #F56565; border-radius: 2px; }
+.leafBlue { width: 10px; height: 10px; background: #4299E1; border-radius: 2px; }
+.leafPurple { width: 10px; height: 10px; background: #9F7AEA; border-radius: 2px; }
+
+/* LSM-tree Diagram */
+.lsmDiagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.lsmLevels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.lsmLevel1 {
+  width: 30px;
+  height: 20px;
+  background: #4299E1;
+  border-radius: 4px 4px 0 0;
+}
+
+.lsmLevel2 {
+  width: 50px;
+  height: 20px;
+  background: #4299E1;
+}
+
+.lsmLevel3 {
+  width: 70px;
+  height: 20px;
+  background: #4299E1;
+  border-radius: 0 0 4px 4px;
+}
+
+.lsmArrows {
+  font-size: 0.8rem;
+  color: var(--brand-600, #ED2738);
+  letter-spacing: 8px;
+}
+
+.lsmBottom {
+  display: flex;
+  gap: 4px;
+}
+
+.lsmBottom span {
+  width: 20px;
+  height: 12px;
+  background: #A0AEC0;
+  border-radius: 2px;
+}
+
+.lsmDesc {
+  font-size: 0.75rem;
+  color: var(--neutral-600, #686162);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* BEPtree Diagram */
+.bepDiagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.bepNode {
+  background: #4A5568;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.bepBuffer {
+  display: flex;
+  gap: 3px;
+}
+
+.bufYellow { width: 10px; height: 10px; background: #ECC94B; border-radius: 2px; }
+.bufBlue { width: 10px; height: 10px; background: #4299E1; border-radius: 2px; }
+.bufPink { width: 10px; height: 10px; background: #ED64A6; border-radius: 2px; }
+
+.bepLevel {
+  display: flex;
+  gap: 12px;
+}
+
+.bepStorage {
+  display: flex;
+  gap: 8px;
+}
+
+.storageOrange {
+  width: 40px;
+  height: 14px;
+  background: #ED8936;
+  border-radius: 3px;
+}
+
+.storagePurple {
+  width: 40px;
+  height: 14px;
+  background: #9F7AEA;
+  border-radius: 3px;
+}
+
+.bepDesc {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.bepDesc p {
+  font-size: 0.75rem;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.bepSmall {
+  font-size: 0.65rem !important;
+  color: #A0AEC0 !important;
+  margin-top: 4px !important;
+}
+
+/* Comparison Table */
+.comparisonTable {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.comparisonTable th,
+.comparisonTable td {
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--neutral-200, #DDDADA);
+}
+
+.comparisonTable th {
+  background: var(--deep-blue-900, #2E3B4C);
+  color: white;
+  font-weight: 600;
+}
+
+.comparisonTable th.highlight {
+  background: var(--brand-600, #ED2738);
+}
+
+.comparisonTable td {
+  background: var(--surface-primary);
+  color: var(--text-dark, #201E1E);
+}
+
+.comparisonTable td.highlight {
+  background: var(--brand-50, #FFF5F6);
+  font-weight: 500;
+}
+
+.metricCell {
+  font-weight: 700;
+  color: var(--deep-blue-800, #32415A) !important;
+  background: var(--surface-base) !important;
+}
+
+.good {
+  color: var(--status-success, #00C280) !important;
+}
+
+.bad {
+  color: var(--status-error, #ED2738) !important;
+}
+
+.neutral {
+  color: var(--neutral-600, #686162) !important;
+}
+
+.source {
+  font-size: 0.8rem;
+  color: var(--neutral-500, #7A7374);
+  margin-top: 8px;
+}
+
+.source a {
+  color: var(--brand-600, #ED2738);
+  text-decoration: none;
+}
+
+.source a:hover {
+  text-decoration: underline;
+}

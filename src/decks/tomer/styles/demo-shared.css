@@ -1,0 +1,528 @@
+/* ============================================
+   DDN SKO DEMO SHARED STYLES
+   True Black "Pro" Cinematic Experience
+   Apple-Level Design System
+   ============================================ */
+
+/* ============================================
+   SKO SECTION THEMES - Narrative vs Technical
+   Uses centralized tokens from global.css
+   ============================================ */
+
+/* NARRATIVE SECTION - Light theme for business impact, ROI */
+.section-narrative {
+  background: var(--bg-narrative, #F5F6F8);
+  color: var(--text-narrative, #201E1E);
+  padding: var(--section-macro, 160px) 0;
+}
+
+.section-narrative h2,
+.section-narrative h3 {
+  color: var(--text-narrative, #201E1E);
+  font-weight: 700;
+  letter-spacing: var(--font-headline-spacing, -0.02em);
+}
+
+.section-narrative p {
+  color: rgba(32, 30, 30, 0.7);
+  font-size: var(--font-body-size, 18px);
+}
+
+/* TECHNICAL SECTION - Dark theme for simulations, architecture */
+.section-technical {
+  background: var(--bg-technical, #000000);
+  color: var(--text-technical, #FFFFFF);
+  padding: var(--section-macro, 160px) 0;
+}
+
+.section-technical h2,
+.section-technical h3 {
+  color: var(--text-technical, #FFFFFF);
+  font-weight: 700;
+  letter-spacing: var(--font-headline-spacing, -0.02em);
+}
+
+.section-technical p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-body-size, 18px);
+}
+
+/* ============================================
+   LEGACY SECTION PATTERNS (with tokens)
+   ============================================ */
+
+/* Dark Section - True Black */
+.section-dark {
+  background: var(--bg-technical, #000000);
+  color: #EDEDED;
+  padding: var(--section-macro, 160px) 0;
+}
+
+.section-dark h2,
+.section-dark h3 {
+  color: #FFFFFF;
+}
+
+.section-dark p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Light Section - Clean white */
+.section-light {
+  background: var(--bg-card);
+  color: #1A1A1A;
+  padding: var(--section-macro, 160px) 0;
+}
+
+.section-light h2,
+.section-light h3 {
+  color: #1A1A1A;
+}
+
+.section-light p {
+  color: #6B6B6B;
+}
+
+/* Gray Section - Subtle gray */
+.section-gray {
+  background: var(--bg-narrative, #F5F6F8);
+  color: #1A1A1A;
+  padding: var(--section-macro, 160px) 0;
+}
+
+/* Accent Section - Brand colored */
+.section-accent {
+  background: linear-gradient(135deg, rgba(237, 39, 56, 0.08) 0%, rgba(237, 39, 56, 0.02) 100%);
+  border-top: 1px solid rgba(237, 39, 56, 0.15);
+  border-bottom: 1px solid rgba(237, 39, 56, 0.15);
+  padding: var(--section-macro, 160px) 0;
+}
+
+/* ============================================
+   HERO PATTERNS - SKO Cinematic
+   ============================================ */
+
+/* Dark Hero - True Black */
+.hero-dark {
+  padding: 160px 0 100px;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-dark::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(237, 39, 56, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(0, 194, 128, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Light Hero */
+.hero-light {
+  padding: 180px 0 120px;
+  background: var(--bg-card);
+  position: relative;
+}
+
+.hero-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(237, 39, 56, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 90% 30%, rgba(0, 194, 128, 0.06) 0%, transparent 50%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* ============================================
+   TYPOGRAPHY - SKO Premium
+   ============================================ */
+
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ED2738;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-family: 'Geist Mono', monospace;
+}
+
+.title-display {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 32px;
+}
+
+.title-gradient {
+  background: linear-gradient(135deg, #ED2738 0%, #FF7600 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   CARDS - SKO Glassmorphism (24px radius)
+   Uses centralized tokens from global.css
+   ============================================ */
+
+/* TECHNICAL CARD - Dark glassmorphism (40% opacity) */
+.card-technical {
+  background: var(--card-technical, rgba(32, 30, 30, 0.40));
+  border: var(--border-width-standard, 1px) solid var(--border-technical, #3F3B3C);
+  border-radius: var(--radius-standard, 24px);
+  backdrop-filter: blur(var(--card-blur, 20px));
+  -webkit-backdrop-filter: blur(var(--card-blur, 20px));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.card-technical:hover {
+  background: rgba(32, 30, 30, 0.60);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-8px) translateZ(0);
+}
+
+/* NARRATIVE CARD - Light glassmorphism (75% opacity) */
+.card-narrative {
+  background: var(--card-narrative, rgba(255, 255, 255, 0.75));
+  border: var(--border-width-standard, 1px) solid var(--border-narrative, #DDDADA);
+  border-radius: var(--radius-standard, 24px);
+  backdrop-filter: blur(var(--card-blur, 20px));
+  -webkit-backdrop-filter: blur(var(--card-blur, 20px));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.card-narrative:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(237, 39, 56, 0.2);
+  transform: translateY(-8px) scale(1.02) translateZ(0);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12);
+}
+
+/* LEGACY: Card on Dark Background - Glassmorphism */
+.card-glass {
+  background: var(--card-technical, rgba(32, 30, 30, 0.40));
+  border: var(--border-width-standard, 1px) solid var(--border-technical, #3F3B3C);
+  border-radius: var(--radius-standard, 24px);
+  backdrop-filter: blur(var(--card-blur, 20px));
+  -webkit-backdrop-filter: blur(var(--card-blur, 20px));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.card-glass:hover {
+  background: rgba(32, 30, 30, 0.60);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-8px) scale(1.02) translateZ(0);
+}
+
+/* LEGACY: Card on Light Background - Elevated */
+.card-elevated {
+  background: var(--bg-card);
+  border: var(--border-width-standard, 1px) solid var(--border-narrative, #DDDADA);
+  border-radius: var(--radius-standard, 24px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.card-elevated:hover {
+  transform: translateY(-8px) scale(1.02) translateZ(0);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.12);
+  border-color: rgba(237, 39, 56, 0.2);
+}
+
+/* ============================================
+   STATS ROW - SKO Premium
+   ============================================ */
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  padding: 32px 0;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  font-family: 'Geist Mono', monospace;
+  margin-bottom: 8px;
+}
+
+.stat-value-dark {
+  color: #FFFFFF;
+}
+
+.stat-value-light {
+  color: #1A1A1A;
+}
+
+.stat-value-accent {
+  color: #ED2738;
+}
+
+.stat-value-success {
+  color: #00C280;
+}
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+/* ============================================
+   BENTO GRID - SKO 24px Radius
+   ============================================ */
+
+.bento-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.bento-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bento-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bento-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.bento-item {
+  padding: 32px;
+  border-radius: 24px;
+}
+
+/* ============================================
+   METRICS GRID - SKO Style
+   ============================================ */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.metric-item {
+  padding: 32px;
+}
+
+.metric-value {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ED2738;
+  font-family: 'Geist Mono', monospace;
+  margin-bottom: 12px;
+}
+
+.metric-value-success {
+  color: #00C280;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================
+   BUTTONS - SKO Premium
+   ============================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: #ED2738;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(237, 39, 56, 0.35);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.btn-primary:hover {
+  background: #CB343B;
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 8px 32px rgba(237, 39, 56, 0.45);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================
+   SKO SPECIAL COMPONENTS
+   ============================================ */
+
+/* ROI Calculator Card */
+.roi-card {
+  background: rgba(0, 194, 128, 0.08);
+  border: 1px solid rgba(0, 194, 128, 0.2);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.roi-card h3 {
+  color: #00C280;
+}
+
+/* Hot/Action Accent Card */
+.hot-card {
+  background: linear-gradient(135deg, rgba(237, 39, 56, 0.12) 0%, rgba(255, 118, 0, 0.08) 100%);
+  border: 1px solid rgba(237, 39, 56, 0.2);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+/* Cold/Infrastructure Card */
+.cold-card {
+  background: rgba(50, 65, 90, 0.2);
+  border: 1px solid rgba(143, 174, 197, 0.2);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+/* ============================================
+   RESPONSIVE - Maintain macro spacing where possible
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .section-narrative,
+  .section-technical,
+  .section-dark,
+  .section-light,
+  .section-gray,
+  .section-accent {
+    padding: 120px 0;
+  }
+
+  .bento-grid-3,
+  .bento-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-narrative,
+  .section-technical,
+  .section-dark,
+  .section-light,
+  .section-gray,
+  .section-accent {
+    padding: 80px 0;
+  }
+
+  .hero-dark,
+  .hero-light {
+    padding: 120px 0 80px;
+  }
+
+  .bento-grid-2,
+  .bento-grid-3,
+  .bento-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .metric-value {
+    font-size: 32px;
+  }
+
+  .title-display {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+}

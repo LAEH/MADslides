@@ -1,0 +1,773 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   DDN SLIDES - UNIFIED DESIGN TOKENS
+   ═══════════════════════════════════════════════════════════════════════════
+   Single source of truth for all decks.
+   Based on DDN HyperPod design system.
+   DARK THEME IS DEFAULT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK THEME (Default)
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* --- BACKGROUNDS --- */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #111111;
+  --bg-page: #000000;
+  --bg-card: #141414;
+  --bg-card-hover: #1a1a1a;
+  --bg-elevated: rgba(255,255,255,0.03);
+  --bg-elevated-hover: rgba(255,255,255,0.06);
+  --bg-input: rgba(255,255,255,0.05);
+  --bg-selected: rgba(59, 130, 246, 0.12);
+  --bg-track: rgba(255,255,255,0.06);
+  --bg-tooltip: rgba(30,30,30,0.95);
+  --bg-subtle: #1a1a1a;
+  --bg-muted: #2a2a2a;
+
+  /* --- TEXT --- */
+  --text-primary: rgba(255,255,255,0.95);
+  --text-secondary: rgba(255,255,255,0.7);
+  --text-tertiary: rgba(255,255,255,0.5);
+  --text-muted: rgba(255,255,255,0.3);
+  --text-subtle: rgba(255,255,255,0.15);
+  --text-inverse: #1d1d1f;
+
+  /* --- BORDERS --- */
+  --border-light: rgba(255,255,255,0.08);
+  --border-medium: rgba(255,255,255,0.12);
+  --border-strong: rgba(255,255,255,0.2);
+  --border-default: rgba(255,255,255,0.08);
+  --border-subtle: rgba(255,255,255,0.05);
+
+  /* --- GLASS MORPHISM --- */
+  --glass-bg: rgba(28, 28, 30, 0.72);
+  --glass-border: rgba(255,255,255,0.1);
+  --glass-blur: 40px;
+
+  /* --- SHADOWS --- */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+  --shadow-card: none;
+
+  /* --- OVERLAYS --- */
+  --overlay-light: rgba(0,0,0,0.8);
+  --overlay-strong: rgba(0,0,0,0.95);
+
+  /* --- BRAND COLORS (constant across themes) --- */
+  --entity-ddn: #ED2738;
+  --entity-ddn-dark: #FE3546;
+  --entity-nvidia: #76B900;
+  --entity-nvidia-light: #8BC34A;
+  --entity-supermicro: #0066B3;
+  --entity-aws: #FF9900;
+
+  /* --- PROJECT COLORS --- */
+  --project-exascaler: #00C280;
+  --project-exascaler-rgb: 0, 194, 128;
+  --project-strategy: #70C5E8;
+  --project-strategy-base: #1A81AF;
+  --project-strategy-base-rgb: 26, 129, 175;
+  --project-tomer: #FF7600;
+  --project-tomer-rgb: 255, 118, 0;
+  --project-template: #ED2738;
+  --project-template-rgb: 237, 39, 56;
+
+  /* --- ACCENT COLORS (dark mode - slightly brighter) --- */
+  --accent-red: #FF4245;
+  --accent-orange: #FF9230;
+  --accent-yellow: #FFD600;
+  --accent-green: #30D158;
+  --accent-mint: #00DAC3;
+  --accent-cyan: #3CD3FE;
+  --accent-blue: #0091FF;
+  --accent-indigo: #6D7CFF;
+  --accent-purple: #DB34F2;
+  --accent-pink: #FF375F;
+
+  /* --- STATUS COLORS --- */
+  --status-success: #30D158;
+  --status-warning: #FF9230;
+  --status-error: #FF4245;
+  --status-info: #0091FF;
+  --status-live: #30D158;
+
+  /* --- SENTIMENT COLORS --- */
+  --sentiment-bullish: #30D158;
+  --sentiment-bearish: #FF4245;
+  --sentiment-neutral: #FFD600;
+
+  /* --- TYPOGRAPHY --- */
+  --font-sans: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', 'Consolas', monospace;
+
+  /* --- RADIUS --- */
+  --radius-sm: 4px;
+  --radius-DEFAULT: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+
+  /* --- SPACING --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* --- MOTION --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+  --ease-arrive: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.15, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-smooth: 450ms;
+  --duration-slow: 500ms;
+  --duration-dramatic: 800ms;
+
+  /* ═══════════════════════════════════════════════════════════════════════════
+     COMPATIBILITY ALIASES (for existing deck CSS)
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+  /* Surface aliases (deck CSS uses these names) */
+  --surface-base: var(--bg-page);
+  --surface-primary: var(--bg-secondary);
+  --surface-secondary: var(--bg-tertiary);
+  --surface-tertiary: #3F3B3C;
+  --surface-card: var(--bg-card);
+  --surface-card-hover: var(--bg-card-hover);
+  --surface-elevated: var(--bg-elevated);
+  --surface-overlay: rgba(0, 0, 0, 0.95);
+  --surface-terminal: #000000;
+
+  /* Border aliases */
+  --border-default: var(--border-light);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-focus: rgba(237, 39, 56, 0.5);
+
+  /* Color aliases */
+  --color-primary: #ED2738;
+  --color-primary-rgb: 237, 39, 56;
+  --color-primary-hover: #FE3546;
+  --color-primary-subtle: rgba(237, 39, 56, 0.12);
+  --color-primary-glow: rgba(237, 39, 56, 0.25);
+  --color-success: #00C280;
+  --color-success-rgb: 0, 194, 128;
+  --color-success-subtle: rgba(0, 194, 128, 0.15);
+  --color-warning: #FEC600;
+  --color-warning-rgb: 254, 198, 0;
+  --color-warning-subtle: rgba(254, 198, 0, 0.15);
+  --color-danger: #ED2738;
+  --color-danger-rgb: 237, 39, 56;
+  --color-danger-subtle: rgba(237, 39, 56, 0.15);
+  --color-info: #70C5E8;
+  --color-info-rgb: 112, 197, 232;
+  --color-info-subtle: rgba(112, 197, 232, 0.15);
+  --color-alert: #FF7600;
+  --color-alert-rgb: 255, 118, 0;
+  --color-green: #00C280;
+  --color-orange: #FF7600;
+  --color-yellow: #FEC600;
+  --color-light-blue: #70C5E8;
+  --color-deep-blue: #374967;
+  --color-ddn-black: #201E1E;
+
+  /* Accent aliases */
+  --accent-nvidia: #00C280;
+  --accent-nvidia-subtle: rgba(0, 194, 128, 0.15);
+  --accent-ai: #374967;
+  --accent-ai-rgb: 55, 73, 103;
+  --accent-ai-subtle: rgba(55, 73, 103, 0.15);
+  --accent-storage: #70C5E8;
+  --accent-storage-subtle: rgba(112, 197, 232, 0.15);
+  --accent-navy: #374967;
+
+  /* Text aliases */
+  --text-inverse: #FFFFFF;
+
+  /* Typography */
+  --font-sans: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* Font weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose: 1.8;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* Typography scale */
+  --text-display: clamp(2.5rem, 5vw, 3.5rem);
+  --text-title: clamp(2rem, 4vw, 2.75rem);
+  --text-h1: clamp(2rem, 4vw, 2.75rem);
+  --text-h2: clamp(1.75rem, 3vw, 2.25rem);
+  --text-h3: 1.5rem;
+  --text-h4: 1.25rem;
+  --text-xl: 1.25rem;
+  --text-lg: 1.125rem;
+  --text-base: 1rem;
+  --text-sm: 0.9375rem;
+  --text-xs: 0.875rem;
+  --text-xxs: 0.8125rem;
+  --text-stat-massive: clamp(4rem, 10vw, 7rem);
+  --text-stat-large: clamp(3rem, 8vw, 5rem);
+  --text-stat-medium: clamp(2rem, 5vw, 3rem);
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-lg: 1024px;
+  --container-md: 768px;
+  --container-sm: 640px;
+  --nav-height: 64px;
+  --nav-height-mobile: 56px;
+
+  /* Glass */
+  --glass-bg: rgba(17, 17, 17, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 20px;
+
+  /* Shadows (dark mode - minimal) */
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-card: none;
+  --shadow-card-hover: 0 0 30px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 30px var(--color-primary-glow);
+  --shadow-glow-success: 0 0 30px rgba(0, 194, 128, 0.25);
+
+  color-scheme: dark;
+}
+
+/* Also apply to data-theme="dark" for explicit dark mode */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIGHT THEME (opt-in)
+   ═══════════════════════════════════════════════════════════════════════════ */
+[data-theme="light"] {
+  /* --- BACKGROUNDS --- */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f8f8;
+  --bg-tertiary: #f5f5f7;
+  --bg-page: #f5f5f7;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafafa;
+  --bg-elevated: rgba(0,0,0,0.02);
+  --bg-elevated-hover: rgba(0,0,0,0.04);
+  --bg-input: #f3f4f6;
+  --bg-selected: #eff6ff;
+  --bg-track: rgba(0,0,0,0.06);
+  --bg-tooltip: rgba(255,255,255,0.95);
+  --bg-subtle: #f0f0f0;
+  --bg-muted: #e8e8e8;
+
+  /* --- TEXT --- */
+  --text-primary: #1d1d1f;
+  --text-secondary: rgba(0,0,0,0.6);
+  --text-tertiary: rgba(0,0,0,0.45);
+  --text-muted: rgba(0,0,0,0.3);
+  --text-subtle: rgba(0,0,0,0.15);
+  --text-inverse: #000000;
+
+  /* --- BORDERS --- */
+  --border-light: rgba(0,0,0,0.08);
+  --border-medium: rgba(0,0,0,0.12);
+  --border-strong: rgba(0,0,0,0.2);
+  --border-default: rgba(0,0,0,0.08);
+  --border-subtle: rgba(0,0,0,0.05);
+
+  /* --- GLASS MORPHISM --- */
+  --glass-bg: rgba(255,255,255,0.85);
+  --glass-border: rgba(0,0,0,0.08);
+  --glass-blur: 20px;
+
+  /* --- SHADOWS --- */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 10px 40px rgba(0,0,0,0.12);
+  --shadow-glow: 0 0 24px var(--color-primary-glow);
+  --shadow-glow-success: 0 0 24px rgba(0, 194, 128, 0.2);
+
+  /* --- OVERLAYS --- */
+  --overlay-light: rgba(255,255,255,0.8);
+  --overlay-strong: rgba(255,255,255,0.95);
+
+  /* --- ACCENT COLORS (light mode) --- */
+  --accent-red: #FF383C;
+  --accent-orange: #FF8D28;
+  --accent-yellow: #FFCC00;
+  --accent-green: #34C759;
+  --accent-mint: #00C8B3;
+  --accent-cyan: #00C0E8;
+  --accent-blue: #0088FF;
+  --accent-indigo: #6155F5;
+  --accent-purple: #CB30E0;
+  --accent-pink: #FF2D55;
+
+  /* --- STATUS COLORS --- */
+  --status-success: #34C759;
+  --status-warning: #FF8D28;
+  --status-error: #FF383C;
+  --status-info: #0088FF;
+  --status-live: #34C759;
+
+  /* --- SENTIMENT COLORS --- */
+  --sentiment-bullish: #34C759;
+  --sentiment-bearish: #FF383C;
+  --sentiment-neutral: #FFCC00;
+
+  /* --- SURFACE ALIASES (light mode) --- */
+  --surface-base: #FFFFFF;
+  --surface-primary: #F8F7F7;
+  --surface-secondary: #F0EEEE;
+  --surface-tertiary: #DDDADA;
+  --surface-card: #FFFFFF;
+  --surface-card-hover: #F8F7F7;
+  --surface-elevated: #FFFFFF;
+  --surface-overlay: rgba(255, 255, 255, 0.95);
+  --surface-terminal: #F5F6F8;
+
+  /* --- COLOR ALIASES (light mode) --- */
+  --color-primary: #ED2738;
+  --color-primary-hover: #CB343B;
+  --color-primary-subtle: rgba(237, 39, 56, 0.08);
+  --color-primary-glow: rgba(237, 39, 56, 0.2);
+  --color-success-subtle: rgba(0, 194, 128, 0.1);
+  --color-warning-subtle: rgba(254, 198, 0, 0.1);
+  --color-danger-subtle: rgba(237, 39, 56, 0.1);
+  --color-info-subtle: rgba(112, 197, 232, 0.1);
+  --accent-nvidia-subtle: rgba(0, 194, 128, 0.1);
+  --accent-ai-subtle: rgba(55, 73, 103, 0.1);
+  --accent-storage-subtle: rgba(112, 197, 232, 0.1);
+
+  /* --- BORDER ALIASES (light mode) --- */
+  --border-focus: rgba(237, 39, 56, 0.4);
+
+  color-scheme: light;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Selection */
+::selection {
+  background: rgba(237, 39, 56, 0.15);
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EXTRA TEXT SIZES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.text-2xs {
+  font-size: 0.625rem; /* 10px */
+  line-height: 0.875rem; /* 14px */
+}
+
+.text-3xs {
+  font-size: 0.5625rem; /* 9px */
+  line-height: 0.75rem; /* 12px */
+}
+
+/* Monospace metric font class for zero-jitter displays */
+.font-mono-metric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'kern' 1;
+  letter-spacing: -0.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   APPLE-STYLE SCROLLBAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 100px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLASS MORPHISM (APPLE STYLE)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DDN BRAND GLOWS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.glow-ddn {
+  box-shadow:
+    0 0 20px rgba(237, 39, 56, 0.2),
+    0 0 40px rgba(237, 39, 56, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.glow-nvidia {
+  box-shadow:
+    0 0 20px rgba(118, 185, 0, 0.2),
+    0 0 40px rgba(118, 185, 0, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.glow-exascaler {
+  box-shadow:
+    0 0 20px rgba(0, 194, 128, 0.2),
+    0 0 40px rgba(0, 194, 128, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   APPLE-STYLE ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(var(--project-exascaler-rgb), 0.4); }
+  50% { box-shadow: 0 0 30px rgba(var(--project-exascaler-rgb), 0.7); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GRADIENT BACKGROUNDS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.gradient-mask-t {
+  mask-image: linear-gradient(to bottom, transparent, black 20px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20px);
+}
+
+.gradient-mask-b {
+  mask-image: linear-gradient(to top, transparent, black 20px);
+  -webkit-mask-image: linear-gradient(to top, transparent, black 20px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY UTILITIES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.text-gradient-ddn {
+  background: linear-gradient(135deg, #ED2738 0%, #ff5c5c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-nvidia {
+  background: linear-gradient(135deg, #76B900 0%, #9ae600 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Text utilities */
+.text-heading {
+  color: var(--text-primary);
+}
+
+.text-body {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-brand {
+  color: var(--entity-ddn);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROGRESS BARS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.progress-bar {
+  background: var(--bg-track);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BADGES & CHIPS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+}
+
+.chip-success {
+  background: rgba(118, 185, 0, 0.15);
+  border-color: rgba(118, 185, 0, 0.3);
+  color: var(--entity-nvidia);
+}
+
+.chip-ddn {
+  background: rgba(237, 39, 56, 0.15);
+  border-color: rgba(237, 39, 56, 0.3);
+  color: var(--entity-ddn);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIVE INDICATOR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.live-dot {
+  position: relative;
+}
+
+.live-dot::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 100%;
+  background: currentColor;
+  opacity: 0.3;
+  animation: pulse-ring 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION DIVIDERS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-medium) 50%,
+    transparent 100%
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STAT CARDS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.stat-value {
+  font-feature-settings: 'tnum' 1, 'kern' 1;
+  letter-spacing: -0.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHIMMER LOADING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--bg-elevated) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDE BASE CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Full-bleed slide container */
+.slide-base {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+/* Card surfaces */
+.card-base {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LOGO UTILITIES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Mono logo that inverts based on theme */
+.logo-mono {
+  filter: invert(1);
+}
+
+[data-theme="light"] .logo-mono {
+  filter: none;
+}

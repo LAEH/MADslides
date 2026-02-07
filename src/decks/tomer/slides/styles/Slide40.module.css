@@ -1,0 +1,57 @@
+/* Slide 40: Capability Matrix */
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.capabilityTable {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 1.15rem;
+}
+
+.capabilityTable th,
+.capabilityTable td {
+  padding: 18px 24px;
+  text-align: left;
+  border: 1px solid var(--neutral-200, #DDDADA);
+  vertical-align: top;
+}
+
+.capabilityTable th {
+  background: var(--deep-blue-900, #2E3B4C);
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.capabilityTable td {
+  background: var(--surface-primary);
+}
+
+.capabilityTable tr:nth-child(even) td {
+  background: var(--surface-base);
+}
+
+.scopeCell {
+  font-weight: 700;
+  color: var(--brand-600, #ED2738) !important;
+  background: var(--surface-base) !important;
+  white-space: nowrap;
+  font-size: 1.2rem;
+}
+
+.capabilityTable ul {
+  margin: 0;
+  padding-left: 22px;
+  list-style-type: disc;
+}
+
+.capabilityTable li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--text-dark, #201E1E);
+}

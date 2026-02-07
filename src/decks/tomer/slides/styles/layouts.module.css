@@ -1,0 +1,591 @@
+/* ============================================
+   SLIDE LAYOUT COMPONENTS - DDN Design System
+   Font: articulat-cf | Colors: DDN Official Palette
+   ============================================ */
+
+/* ============================================
+   WEB SLIDE TYPOGRAPHY SYSTEM
+   Optimized for 16:9 presentation format
+   All sizes are presentation-ready (large & readable)
+   ============================================ */
+
+/*
+   Typography Scale for Web Slides:
+   - Hero Title: 5-6rem (title slides)
+   - Section Title: 4-5rem (section dividers)
+   - Slide Title: 2.5-3.5rem (content slide headers)
+   - Slide Subtitle: 1.5-2rem (supporting headers)
+   - Body Large: 1.4-1.8rem (primary content)
+   - Body Regular: 1.2-1.5rem (secondary content)
+   - Body Small: 1-1.2rem (tertiary/captions)
+   - Stats/Numbers: 3-5rem (metrics, use Geist Mono)
+*/
+
+/* ============================================
+   TITLE SLIDE
+   ============================================ */
+.titleSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-base);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.titleBackground {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.titleGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(237, 39, 56, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(255, 118, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 170, 50, 0.05) 0%, transparent 60%);
+}
+
+.titleContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 60px;
+  max-width: 90%;
+}
+
+.titleText {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.titleSubtitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  color: var(--neutral-600, #686162);
+  font-weight: 400;
+  margin-bottom: 40px;
+  line-height: 1.3;
+}
+
+.titleTags {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.titleTag {
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  color: var(--brand-600, #ED2738);
+  letter-spacing: 0.02em;
+}
+
+.titleBadge {
+  display: inline-block;
+  padding: 12px 32px;
+  background: var(--brand-600, #ED2738);
+  color: var(--text-light, #FFFFFF);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+}
+
+/* ============================================
+   SECTION SLIDE
+   ============================================ */
+.sectionSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-base);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.sectionSlide.dark {
+  background: var(--neutral-900, #201E1E);
+}
+
+.sectionContent {
+  text-align: center;
+  padding: 60px;
+}
+
+.sectionTitle {
+  font-size: clamp(4rem, 9vw, 7rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.sectionSlide.dark .sectionTitle {
+  color: var(--text-light, #FFFFFF);
+}
+
+.sectionSubtitle {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--neutral-600, #686162);
+  margin-top: 28px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.sectionSlide.dark .sectionSubtitle {
+  color: var(--neutral-300, #B7BABA);
+}
+
+/* ============================================
+   CONTENT SLIDE
+   ============================================ */
+.contentSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 80px;
+  background: var(--surface-base);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.contentSlide.dark {
+  background: var(--neutral-900, #201E1E);
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentHeader {
+  margin-bottom: 48px;
+  flex-shrink: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.contentTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.contentSlide.dark .contentTitle {
+  color: var(--text-light, #FFFFFF);
+}
+
+.contentSubtitle {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  color: var(--neutral-600, #686162);
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.contentSlide.dark .contentSubtitle {
+  color: var(--neutral-300, #B7BABA);
+}
+
+.contentBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   BULLET SLIDE
+   ============================================ */
+.bulletSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 80px;
+  background: var(--surface-base);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.bulletSlide.dark {
+  background: var(--neutral-900, #201E1E);
+}
+
+.bulletWrapper {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.bulletTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  letter-spacing: -0.02em;
+  margin-bottom: 56px;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.bulletSlide.dark .bulletTitle {
+  color: var(--text-light, #FFFFFF);
+}
+
+.bulletList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.bulletItem {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 44px;
+  position: relative;
+}
+
+.bulletItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--brand-600, #ED2738);
+}
+
+.bulletSlide.dark .bulletItem::before {
+  background: var(--brand-400, #FF6572);
+}
+
+.bulletText {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--text-dark, #201E1E);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.bulletSlide.dark .bulletText {
+  color: var(--text-light, #FFFFFF);
+}
+
+.bulletArrow {
+  color: var(--neutral-500, #7A7374);
+  font-weight: 400;
+  padding: 0 8px;
+}
+
+.bulletSlide.dark .bulletArrow {
+  color: var(--neutral-400, #9C9A94);
+}
+
+.bulletHighlight {
+  color: var(--brand-600, #ED2738);
+  font-weight: 500;
+}
+
+.bulletSubList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bulletSubItem {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--neutral-600, #686162);
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.5;
+}
+
+.bulletSubItem::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--neutral-400, #9C9A94);
+  font-weight: 600;
+}
+
+.bulletSlide.dark .bulletSubItem {
+  color: var(--neutral-300, #B7BABA);
+}
+
+/* ============================================
+   FEATURE GRID SLIDE
+   ============================================ */
+.featureGridSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 80px;
+  background: var(--surface-base);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.featureGridSlide.dark {
+  background: var(--neutral-900, #201E1E);
+}
+
+.featureGridWrapper {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.featureGridTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  letter-spacing: -0.02em;
+  margin-bottom: 56px;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.featureGridSlide.dark .featureGridTitle {
+  color: var(--text-light, #FFFFFF);
+}
+
+.featureGrid {
+  display: grid;
+  gap: 32px;
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  background: var(--surface-primary);
+  border-radius: 20px;
+  border: 1px solid var(--neutral-200, #DDDADA);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.featureGridSlide.dark .featureCard {
+  background: var(--neutral-800, #3F3B3C);
+  border-color: var(--neutral-700, #494343);
+}
+
+.featureIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--brand-600, #ED2738) 0%, var(--brand-800, #A4101D) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light, #FFFFFF);
+  margin-bottom: 24px;
+}
+
+.featureTitle {
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  margin-bottom: 14px;
+}
+
+.featureGridSlide.dark .featureTitle {
+  color: var(--text-light, #FFFFFF);
+}
+
+.featureDescription {
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  color: var(--neutral-600, #686162);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.featureGridSlide.dark .featureDescription {
+  color: var(--neutral-300, #B7BABA);
+}
+
+/* ============================================
+   OUTLINE SLIDE
+   ============================================ */
+.outlineSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 80px;
+  background: var(--surface-base);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.outlineWrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.outlineTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  letter-spacing: -0.02em;
+  margin-bottom: 64px;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.outlineList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.outlineItem {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 40px;
+  background: var(--surface-primary);
+  border-radius: 14px;
+  border: 1px solid var(--neutral-200, #DDDADA);
+  transition: all 0.2s ease;
+}
+
+.outlineItem:hover {
+  background: var(--surface-primary);
+  border-color: var(--brand-200, #FFC6CB);
+}
+
+.outlineItem.active {
+  background: var(--brand-100, #FFE0E3);
+  border-color: var(--brand-400, #FF6572);
+}
+
+.outlineNumber {
+  font-family: 'Geist Mono', monospace;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  color: var(--brand-600, #ED2738);
+  min-width: 48px;
+}
+
+.outlineText {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  font-weight: 500;
+  color: var(--text-dark, #201E1E);
+}
+
+.outlineItem.active .outlineText {
+  font-weight: 700;
+}
+
+/* ============================================
+   DIAGRAM SLIDE
+   ============================================ */
+.diagramSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 64px;
+  background: var(--surface-base);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.diagramSlide.dark {
+  background: var(--neutral-900, #201E1E);
+}
+
+.diagramWrapper {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagramWrapper.fullWidth {
+  max-width: 100%;
+  padding: 0 24px;
+}
+
+.diagramHeader {
+  margin-bottom: 32px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.diagramTitle {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.diagramSlide.dark .diagramTitle {
+  color: var(--text-light, #FFFFFF);
+}
+
+.diagramSubtitle {
+  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  color: var(--neutral-600, #686162);
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.diagramSlide.dark .diagramSubtitle {
+  color: var(--neutral-300, #B7BABA);
+}
+
+.diagramContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  width: 100%;
+}

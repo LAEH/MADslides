@@ -1,0 +1,84 @@
+/* Slide 12: Metadata Comparison */
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.comparisonCard {
+  padding: 36px;
+  background: var(--surface-primary);
+  border: 2px solid var(--neutral-200, #DDDADA);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.comparisonCard h3 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-dark, #201E1E);
+  margin-bottom: 16px;
+}
+
+.quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--brand-600, #ED2738);
+  margin-bottom: 28px;
+}
+
+.traits {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.traitGood {
+  padding: 14px 18px;
+  background: var(--status-success-subtle, #EAFFF5);
+  color: var(--status-success, #00C280);
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.traitBad {
+  padding: 14px 18px;
+  background: var(--status-error-subtle, #FFE0E3);
+  color: var(--status-error, #ED2738);
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.traitNeutral {
+  padding: 14px 18px;
+  background: var(--neutral-100, #F0EEEE);
+  color: var(--neutral-600, #686162);
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.comparisonCardHighlight {
+  padding: 36px;
+  background: var(--deep-blue-900, #2E3B4C);
+  border: 2px solid var(--brand-600, #ED2738);
+  border-radius: 18px;
+  text-align: center;
+  color: white;
+}
+
+.comparisonCardHighlight h3 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-light, #FFFFFF);
+  margin-bottom: 16px;
+}
+
+.comparisonCardHighlight .quote {
+  color: var(--brand-300, #FF9EA6);
+}

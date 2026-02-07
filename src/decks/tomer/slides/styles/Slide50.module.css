@@ -1,0 +1,87 @@
+/* Slide 50: S3 Compatibility */
+
+.content {
+  display: flex;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
+  align-items: flex-start;
+}
+
+.highlight {
+  background: var(--brand-600, #ED2738);
+  color: white;
+  padding: 36px;
+  border-radius: 16px;
+  text-align: center;
+  min-width: 240px;
+}
+
+.percentage {
+  display: block;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.note {
+  font-size: 1.1rem;
+  margin-top: 18px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.tableContainer {
+  flex: 1;
+  overflow-x: auto;
+}
+
+.resultsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+}
+
+.resultsTable th,
+.resultsTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid var(--neutral-200, #DDDADA);
+}
+
+.resultsTable th {
+  background: var(--deep-blue-900, #2E3B4C);
+  color: white;
+  font-weight: 600;
+}
+
+.resultsTable td {
+  background: var(--surface-primary);
+}
+
+.resultsTable tr:nth-child(even) td {
+  background: var(--surface-base);
+}
+
+.passed {
+  color: var(--status-success, #00C280) !important;
+  text-align: center !important;
+  font-weight: 600;
+}
+
+.failed {
+  color: var(--status-error, #ED2738) !important;
+  text-align: center !important;
+}
+
+.totalRow td {
+  background: var(--deep-blue-100, #D1DCE9) !important;
+  font-weight: 700;
+}

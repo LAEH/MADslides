@@ -1,0 +1,67 @@
+/* Slide 46: Embedded vs Native */
+
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card {
+  background: var(--surface-primary);
+  border: 2px solid var(--neutral-200, #DDDADA);
+  border-radius: 16px;
+  padding: 36px;
+}
+
+.card.highlight {
+  background: var(--deep-blue-900, #2E3B4C);
+  border-color: var(--brand-600, #ED2738);
+  color: white;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--deep-blue-800, #32415A);
+  margin-bottom: 20px;
+}
+
+.card.highlight h3 {
+  color: white;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: var(--neutral-600, #686162);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.card.highlight .description {
+  color: var(--neutral-200, #DDDADA);
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  font-size: 1.2rem;
+  padding: 14px 0;
+  border-top: 1px solid var(--neutral-200, #DDDADA);
+  color: var(--text-dark, #201E1E);
+}
+
+.card.highlight li {
+  border-color: var(--deep-blue-700, #455571);
+  color: white;
+}
+
+.card li::before {
+  content: '→ ';
+  color: var(--brand-600, #ED2738);
+}

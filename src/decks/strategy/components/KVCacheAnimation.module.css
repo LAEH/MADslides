@@ -1,0 +1,473 @@
+/* ============================================
+   KV Cache Animation - Block-to-Block Transfer
+   Clean layout with spaced grids and bridge pill
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  min-height: 360px;
+  max-height: 420px;
+  background: var(--bg-card);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* DESIGN FIX: 120px gap for proper pill bridge spacing */
+  gap: 120px;
+  /* FIX: Prevent grid overflow */
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Panel Base Styles - Spaced Layout
+   ============================================ */
+.fabricPanel,
+.vramPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 12px;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.fabricPanel {
+  align-items: flex-end;
+}
+
+.vramPanel {
+  align-items: flex-start;
+}
+
+/* ============================================
+   Panel Headers - Top-Left Aligned Labels
+   ============================================ */
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.vramPanel .panelHeader {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Icon containers - removed backgrounds for cleaner look */
+.panelIcon,
+.panelIconGpu {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+}
+
+.panelIcon svg,
+.panelIconGpu svg {
+  width: 20px;
+  height: 20px;
+}
+
+.panelTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* KEY FIX: Labels - Uppercase, Bold, Light Grey */
+.titleMain {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.titleSub {
+  font-size: 10px;
+  font-weight: 600;
+  color: #D1D5DB;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   KV Fabric Grid - Blue Memory Blocks
+   ============================================ */
+.fabricGrid {
+  display: grid;
+  gap: 2px;
+  padding: 8px;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border-radius: 10px;
+  border: 1px solid #BFDBFE;
+  aspect-ratio: 1;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.fabricCell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: #3B82F6;
+  border: 1px solid #2563EB;
+  transition: all 0.1s ease-out;
+}
+
+.fabricCell.fabricActive {
+  background: #ED2738;
+  border-color: #DC2626;
+  box-shadow:
+    0 0 12px rgba(237, 39, 56, 0.8),
+    0 0 24px rgba(237, 39, 56, 0.4);
+  transform: scale(1.15);
+}
+
+/* ============================================
+   Glass Accelerator - Bridge Pill
+   KEY FIX: Narrower pill, sits in gap, minimal overlap
+   ============================================ */
+.acceleratorZone {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glassAccelerator {
+  /* DESIGN FIX: 115px pill in 100px gap = ~7.5px overlap per side */
+  width: 115px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 2px solid rgba(255, 255, 255, 0.98);
+  border-radius: 32px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.15s ease;
+}
+
+.glassAccelerator.flashing {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 8px 32px rgba(59, 130, 246, 0.4),
+    0 0 50px rgba(249, 115, 22, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* Projectile track inside glass */
+.projectileTrack {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 35px;
+}
+
+/* Glowing Orb Projectiles */
+.projectile {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    #FF6B00 0%,
+    #FF9500 40%,
+    #3B82F6 70%,
+    rgba(59, 130, 246, 0.3) 100%
+  );
+  box-shadow:
+    0 0 10px rgba(255, 107, 0, 0.9),
+    0 0 20px rgba(249, 115, 22, 0.6),
+    0 0 30px rgba(59, 130, 246, 0.3);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+/* Bandwidth Display */
+.bandwidthDisplay {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  z-index: 5;
+}
+
+/* KEY FIX: Larger pill text (+20%) and BLACK color */
+.bandwidthValue {
+  font-family: 'Geist Mono', 'SF Mono', monospace;
+  font-size: 34px;
+  font-weight: 800;
+  color: #000000;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.bandwidthUnit {
+  font-family: 'Geist Mono', 'SF Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* ============================================
+   GPU VRAM Grid - Orange with Enhanced Green Flush
+   ============================================ */
+.vramGrid {
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  border-radius: 10px;
+  border: 1px solid #FDE68A;
+  aspect-ratio: 1;
+  height: 300px;
+  width: 300px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* KEY FIX: Enhanced Green Flush Effect (#10B981) */
+.vramPanel.flushing .vramGrid {
+  background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+  border-color: #6EE7B7;
+  box-shadow:
+    0 0 30px rgba(16, 185, 129, 0.5),
+    0 0 60px rgba(16, 185, 129, 0.3),
+    inset 0 0 40px rgba(16, 185, 129, 0.25);
+}
+
+.vramCell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: #FEF3C7;
+  transition: all 0.08s ease-out;
+  border: 1px solid #FDE68A;
+}
+
+.vramCell.vramFilling {
+  background: #F97316;
+  border-color: #EA580C;
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.6);
+  animation: fillPop 0.12s ease-out;
+}
+
+@keyframes fillPop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.vramCell.vramActive {
+  background: #FB923C;
+  border-color: #F97316;
+}
+
+.vramCell.vramEmpty {
+  background: #FEF3C7;
+  border-color: #FDE68A;
+}
+
+/* KEY FIX: Strong Green Flash on Flush (#10B981) */
+.vramPanel.flushing .vramCell {
+  background: #10B981 !important;
+  border-color: #059669 !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+  animation: flushPulse 0.3s ease-out;
+}
+
+@keyframes flushPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+  }
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+@media (max-width: 1200px) {
+  .container {
+    padding: 14px 20px;
+    gap: 70px;
+    max-width: 800px;
+  }
+
+  .glassAccelerator {
+    width: 95px;
+    height: 56px;
+  }
+
+  .bandwidthValue {
+    font-size: 28px;
+  }
+
+  .bandwidthUnit {
+    font-size: 12px;
+  }
+
+  .fabricGrid,
+  .vramGrid {
+    gap: 1px;
+    padding: 5px;
+  }
+
+  .titleMain {
+    font-size: 11px;
+  }
+
+  .projectile {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 12px 16px;
+    gap: 50px;
+    max-width: 700px;
+  }
+
+  .glassAccelerator {
+    width: 90px;
+    height: 55px;
+  }
+
+  .bandwidthValue {
+    font-size: 24px;
+  }
+
+  .bandwidthUnit {
+    font-size: 10px;
+  }
+
+  .fabricGrid,
+  .vramGrid {
+    gap: 1px;
+    padding: 4px;
+    max-height: 200px;
+  }
+
+  .panelIcon,
+  .panelIconGpu {
+    width: 20px;
+    height: 20px;
+  }
+
+  .panelIcon svg,
+  .panelIconGpu svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .projectile {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    min-height: auto;
+    gap: 40px;
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .fabricPanel,
+  .vramPanel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .vramPanel {
+    align-items: flex-start;
+  }
+
+  .vramPanel .panelHeader {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .acceleratorZone {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: -20px 0;
+  }
+
+  .glassAccelerator {
+    width: 140px;
+    height: 50px;
+  }
+
+  .bandwidthValue {
+    font-size: 22px;
+  }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .fabricCell,
+  .vramCell,
+  .projectile,
+  .glassAccelerator {
+    transition: none;
+    animation: none;
+  }
+
+  .fabricCell.fabricActive {
+    transform: none;
+  }
+
+  .vramPanel.flushing .vramCell {
+    animation: none;
+  }
+}

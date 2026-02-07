@@ -1,0 +1,361 @@
+/* Strategic Forces - Schematic 5-Column Layout */
+/* Slide 4 - Continuation of Slides 2 & 3 */
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 48px 0;
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ═══════════════════════════════════════════════════
+   HEADER - Top Left Aligned, Matching Slides 2 & 3
+   ═══════════════════════════════════════════════════ */
+.header {
+  flex-shrink: 0;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #ED2738;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitleWrapper {
+  position: relative;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555555;
+  margin: 0 0 12px 0;
+}
+
+.subtitleAccent {
+  width: 48px;
+  height: 4px;
+  background: #ED2738;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════════
+   5-COLUMN GRID
+   ═══════════════════════════════════════════════════ */
+.columnsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  flex: 1;
+  min-height: 0;
+  padding-bottom: 50px; /* Space for footer */
+}
+
+/* Individual Column */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  border-right: 1px dashed #E5E5E5;
+}
+
+.column:last-child {
+  border-right: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   ZONE A: ICON (Visual Anchor)
+   ═══════════════════════════════════════════════════ */
+.iconZone {
+  flex-shrink: 0;
+  padding: 12px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #333333;
+  stroke-width: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════
+   ZONE B: TITLE & DESCRIPTION (The Problem/Trend)
+   ═══════════════════════════════════════════════════ */
+.contentZone {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 0 4px;
+  max-width: 95%;
+}
+
+.forceTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ED2738;
+  letter-spacing: 0.03em;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.forceDescription {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   ECOSYSTEM ZONE
+   ═══════════════════════════════════════════════════ */
+.ecosystemZone {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 16px 4px 12px;
+  border-top: 1px solid #E5E5E5;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.ecosystemLabel {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  color: #999999;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.ecosystemValue {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #555555;
+}
+
+/* ═══════════════════════════════════════════════════
+   ZONE C: CONNECTOR LINE (The Drop)
+   ═══════════════════════════════════════════════════ */
+.connectorZone {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  min-height: 32px;
+}
+
+.connectorLine {
+  width: 1px;
+  height: 32px;
+  background: #DDDDDD;
+}
+
+/* ═══════════════════════════════════════════════════
+   ZONE D: SOLUTION CHIPS (The Product)
+   ═══════════════════════════════════════════════════ */
+.solutionZone {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 16px;
+}
+
+.solutionChip {
+  padding: 5px 12px;
+  border: 1px solid #ED2738;
+  border-radius: 14px;
+  background: #FFF5F5;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ED2738;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.solutionChip:hover {
+  background: rgba(237, 39, 56, 0.12);
+  transform: scale(1.02);
+}
+
+/* ═══════════════════════════════════════════════════
+   FOUNDATION FOOTER (Branding Anchor)
+   ═══════════════════════════════════════════════════ */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #ED2738;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerText {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 1400px) {
+  .container {
+    padding: 32px 32px 0;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .column {
+    padding: 0 12px;
+  }
+
+  .forceTitle {
+    font-size: 11px;
+  }
+
+  .forceDescription {
+    font-size: 11px;
+  }
+
+  .ecosystemLabel {
+    font-size: 8px;
+  }
+
+  .ecosystemValue {
+    font-size: 10px;
+  }
+
+  .solutionChip {
+    padding: 4px 10px;
+    font-size: 9px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footerText {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    padding: 24px 20px 0;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .subtitleAccent {
+    width: 36px;
+    height: 3px;
+  }
+
+  .column {
+    padding: 0 8px;
+  }
+
+  .iconZone {
+    padding: 8px 0 12px;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .forceTitle {
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .forceDescription {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .ecosystemZone {
+    padding: 10px 2px 8px;
+    margin-top: 10px;
+  }
+
+  .ecosystemLabel {
+    font-size: 7px;
+    margin-bottom: 4px;
+  }
+
+  .ecosystemValue {
+    font-size: 9px;
+  }
+
+  .connectorZone {
+    padding: 8px 0;
+    min-height: 24px;
+  }
+
+  .connectorLine {
+    height: 24px;
+  }
+
+  .solutionZone {
+    gap: 4px;
+    padding-bottom: 12px;
+  }
+
+  .solutionChip {
+    padding: 3px 8px;
+    font-size: 8px;
+    border-radius: 10px;
+  }
+
+  .footer {
+    height: 32px;
+  }
+
+  .footerText {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}

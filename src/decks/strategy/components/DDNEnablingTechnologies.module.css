@@ -1,0 +1,365 @@
+/* DDN Enabling Technologies - Slide 3 */
+/* Matches reference design with cards, ECOSYSTEM, DDN products, connector lines */
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 48px 32px;
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════════════
+   HEADER - Top Left Aligned, Large Bold Red Title
+   ═══════════════════════════════════════════════════ */
+.header {
+  flex-shrink: 0;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #ED2738;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitleWrapper {
+  position: relative;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555555;
+  margin: 0 0 12px 0;
+}
+
+.subtitleAccent {
+  width: 48px;
+  height: 4px;
+  background: #ED2738;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════════
+   CARDS WRAPPER - Contains grid + connectors + logo
+   ═══════════════════════════════════════════════════ */
+.cardsWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   5-CARD GRID
+   ═══════════════════════════════════════════════════ */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid #E5E5E5;
+  border-radius: 12px;
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Icon in grey rounded box */
+.iconBox {
+  width: 56px;
+  height: 56px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.icon {
+  color: #ED2738;
+}
+
+/* Card Title */
+.cardTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+
+/* Card Description */
+.cardDescription {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+/* Ecosystem Section */
+.ecosystemSection {
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid #E5E5E5;
+  margin-bottom: 12px;
+}
+
+.ecosystemLabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #999999;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.ecosystemValue {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #444444;
+}
+
+/* DDN Products Section */
+.ddnSection {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(237, 39, 56, 0.04);
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.ddnLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ED2738;
+  margin-right: 4px;
+}
+
+.ddnValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ED2738;
+}
+
+/* Connector Line from Card Bottom */
+.connectorLine {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 24px;
+  background: #ED2738;
+}
+
+.connectorDot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #ED2738;
+  border-radius: 50%;
+}
+
+/* ═══════════════════════════════════════════════════
+   SVG CONNECTOR LINES TO DDN LOGO
+   ═══════════════════════════════════════════════════ */
+.connectorSvg {
+  width: 100%;
+  height: 80px;
+  flex-shrink: 0;
+  margin-top: 24px;
+}
+
+.connectorPath {
+  fill: none;
+  stroke: #ED2738;
+  stroke-width: 2;
+}
+
+/* ═══════════════════════════════════════════════════
+   DDN LOGO AT BOTTOM CENTER
+   ═══════════════════════════════════════════════════ */
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+  flex-shrink: 0;
+}
+
+.ddnLogo {
+  height: 48px;
+  width: auto;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 1400px) {
+  .container {
+    padding: 32px 32px 24px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .cardsGrid {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 16px 12px 14px;
+  }
+
+  .iconBox {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cardTitle {
+    font-size: 12px;
+  }
+
+  .cardDescription {
+    font-size: 11px;
+  }
+
+  .ecosystemLabel {
+    font-size: 9px;
+  }
+
+  .ecosystemValue {
+    font-size: 11px;
+  }
+
+  .ddnLabel,
+  .ddnValue {
+    font-size: 11px;
+  }
+
+  .ddnLogo {
+    height: 40px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    padding: 24px 20px 16px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .subtitleAccent {
+    width: 36px;
+    height: 3px;
+  }
+
+  .cardsGrid {
+    gap: 8px;
+  }
+
+  .card {
+    padding: 12px 8px 12px;
+    border-radius: 8px;
+  }
+
+  .iconBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cardTitle {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .cardDescription {
+    font-size: 10px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .ecosystemSection {
+    padding-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .ecosystemLabel {
+    font-size: 8px;
+    margin-bottom: 4px;
+  }
+
+  .ecosystemValue {
+    font-size: 9px;
+  }
+
+  .ddnSection {
+    padding: 6px 8px;
+    margin-bottom: 12px;
+  }
+
+  .ddnLabel,
+  .ddnValue {
+    font-size: 9px;
+  }
+
+  .connectorLine {
+    height: 16px;
+    bottom: -16px;
+  }
+
+  .connectorDot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .connectorSvg {
+    height: 60px;
+    margin-top: 16px;
+  }
+
+  .ddnLogo {
+    height: 32px;
+  }
+}

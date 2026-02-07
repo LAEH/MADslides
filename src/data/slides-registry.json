@@ -1,0 +1,1041 @@
+{
+  "version": "1.0.0",
+  "totalSlides": 51,
+  "projects": {
+    "exascaler": {
+      "name": "EXAScaler",
+      "port": 3002,
+      "color": "#00C280",
+      "path": "ddn-slides-exascaler"
+    },
+    "strategy": {
+      "name": "Strategy",
+      "port": 3003,
+      "color": "#70C5E8",
+      "path": "ddn-slides-strategy"
+    },
+    "tomer": {
+      "name": "Infinia Technical",
+      "port": 3004,
+      "color": "#FF7600",
+      "path": "ddn-slides-tomer"
+    },
+    "template": {
+      "name": "Template",
+      "port": 5173,
+      "color": "#ED2738",
+      "path": "ddn-slides-template"
+    }
+  },
+  "slides": [
+    {
+      "codeName": "exa-hero",
+      "project": "exascaler",
+      "slideIndex": 1,
+      "title": "Hero",
+      "section": "Introduction",
+      "layout": "hero",
+      "description": "EXAScaler product hero with dramatic dark reveal",
+      "tags": [
+        "hero",
+        "introduction",
+        "product"
+      ],
+      "previewUrl": "/render/exascaler?slide=1&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "image"
+      ]
+    },
+    {
+      "codeName": "exa-hardware",
+      "project": "exascaler",
+      "slideIndex": 2,
+      "title": "Hardware Overview",
+      "section": "Product",
+      "layout": "feature",
+      "description": "Hardware component breakdown with specs grid",
+      "tags": [
+        "hardware",
+        "specs",
+        "product"
+      ],
+      "previewUrl": "/render/exascaler?slide=2&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "image"
+      ]
+    },
+    {
+      "codeName": "exa-lustre",
+      "project": "exascaler",
+      "slideIndex": 3,
+      "title": "Lustre Explainer",
+      "section": "Technology",
+      "layout": "diagram",
+      "description": "Lustre parallel file system architecture explanation",
+      "tags": [
+        "lustre",
+        "filesystem",
+        "architecture"
+      ],
+      "previewUrl": "/render/exascaler?slide=3&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "exa-architecture",
+      "project": "exascaler",
+      "slideIndex": 4,
+      "title": "Architecture",
+      "section": "Technology",
+      "layout": "diagram",
+      "description": "System architecture diagram with component layers",
+      "tags": [
+        "architecture",
+        "system",
+        "diagram"
+      ],
+      "previewUrl": "/render/exascaler?slide=4&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "exa-kvcache",
+      "project": "exascaler",
+      "slideIndex": 5,
+      "title": "KV Cache",
+      "section": "Technology",
+      "layout": "feature",
+      "description": "Key-Value cache system with performance metrics",
+      "tags": [
+        "kv-cache",
+        "performance",
+        "caching"
+      ],
+      "previewUrl": "/render/exascaler?slide=5&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "exa-file-layout",
+      "project": "exascaler",
+      "slideIndex": 6,
+      "title": "File Layout",
+      "section": "Technology",
+      "layout": "diagram",
+      "description": "File system layout and data organization",
+      "tags": [
+        "file-layout",
+        "data",
+        "storage"
+      ],
+      "previewUrl": "/render/exascaler?slide=6&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "exa-multitenancy",
+      "project": "exascaler",
+      "slideIndex": 7,
+      "title": "Multi-Tenancy",
+      "section": "Features",
+      "layout": "feature",
+      "description": "Multi-tenant isolation and resource management",
+      "tags": [
+        "multi-tenancy",
+        "isolation",
+        "enterprise"
+      ],
+      "previewUrl": "/render/exascaler?slide=7&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "exa-hot-pools",
+      "project": "exascaler",
+      "slideIndex": 8,
+      "title": "Hot Pools",
+      "section": "Features",
+      "layout": "feature",
+      "description": "Hot/cold data tiering and pool management",
+      "tags": [
+        "tiering",
+        "hot-pools",
+        "data-management"
+      ],
+      "previewUrl": "/render/exascaler?slide=8&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "exa-iops",
+      "project": "exascaler",
+      "slideIndex": 9,
+      "title": "IOPS Performance",
+      "section": "Performance",
+      "layout": "metrics",
+      "description": "IOPS performance benchmarks and comparisons",
+      "tags": [
+        "iops",
+        "performance",
+        "benchmarks"
+      ],
+      "previewUrl": "/render/exascaler?slide=9&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "chart"
+      ]
+    },
+    {
+      "codeName": "exa-ha",
+      "project": "exascaler",
+      "slideIndex": 10,
+      "title": "High Availability",
+      "section": "Features",
+      "layout": "feature",
+      "description": "High availability and failover architecture",
+      "tags": [
+        "ha",
+        "availability",
+        "failover"
+      ],
+      "previewUrl": "/render/exascaler?slide=10&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "exa-observability",
+      "project": "exascaler",
+      "slideIndex": 11,
+      "title": "Observability",
+      "section": "Operations",
+      "layout": "dashboard",
+      "description": "Monitoring, alerts, and observability dashboard",
+      "tags": [
+        "monitoring",
+        "observability",
+        "dashboard"
+      ],
+      "previewUrl": "/render/exascaler?slide=11&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "interactive",
+        "chart"
+      ]
+    },
+    {
+      "codeName": "exa-get-started",
+      "project": "exascaler",
+      "slideIndex": 12,
+      "title": "Get Started",
+      "section": "CTA",
+      "layout": "cta",
+      "description": "Call to action and next steps",
+      "tags": [
+        "cta",
+        "closing",
+        "contact"
+      ],
+      "previewUrl": "/render/exascaler?slide=12&embedded=true",
+      "sourceRef": "ddn-slides-exascaler/src/pages/EXAScalerDemo.tsx",
+      "contentTags": [
+        "animation",
+        "text"
+      ]
+    },
+    {
+      "codeName": "strategy-title",
+      "project": "strategy",
+      "slideIndex": 1,
+      "title": "Title",
+      "section": "Introduction",
+      "layout": "hero",
+      "description": "Strategy presentation title slide",
+      "tags": [
+        "hero",
+        "title",
+        "strategy"
+      ],
+      "previewUrl": "/render/strategy?slide=1&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "animation",
+        "image"
+      ]
+    },
+    {
+      "codeName": "strategy-enabling-tech",
+      "project": "strategy",
+      "slideIndex": 3,
+      "title": "DDN Enabling Technologies",
+      "section": "Technology",
+      "layout": "diagram",
+      "description": "Technology stack and enabling capabilities",
+      "tags": [
+        "technology",
+        "stack",
+        "capabilities"
+      ],
+      "previewUrl": "/render/strategy?slide=3&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "strategy-data-intelligence",
+      "project": "strategy",
+      "slideIndex": 5,
+      "title": "Data Intelligence Platform",
+      "section": "Product",
+      "layout": "feature",
+      "description": "Data intelligence platform architecture",
+      "tags": [
+        "data",
+        "intelligence",
+        "platform"
+      ],
+      "previewUrl": "/render/strategy?slide=5&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "strategy-ai-demand",
+      "project": "strategy",
+      "slideIndex": 6,
+      "title": "AI Data-Compute Demand",
+      "section": "Market Analysis",
+      "layout": "chart",
+      "description": "AI compute demand growth charts and projections",
+      "tags": [
+        "ai",
+        "demand",
+        "compute",
+        "chart"
+      ],
+      "previewUrl": "/render/strategy?slide=6&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "animation",
+        "chart"
+      ]
+    },
+    {
+      "codeName": "strategy-pediatric-cancer",
+      "project": "strategy",
+      "slideIndex": 7,
+      "title": "Use Case: Pediatric Cancer",
+      "section": "Use Cases",
+      "layout": "content",
+      "description": "Pediatric cancer research use case with DDN",
+      "tags": [
+        "use-case",
+        "healthcare",
+        "cancer",
+        "research"
+      ],
+      "previewUrl": "/render/strategy?slide=7&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "image",
+        "text"
+      ]
+    },
+    {
+      "codeName": "strategy-2026",
+      "project": "strategy",
+      "slideIndex": 9,
+      "title": "2026 Strategy",
+      "section": "Strategy",
+      "layout": "content",
+      "description": "2026 strategic priorities and objectives",
+      "tags": [
+        "strategy",
+        "2026",
+        "priorities"
+      ],
+      "previewUrl": "/render/strategy?slide=9&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "strategy-evolution",
+      "project": "strategy",
+      "slideIndex": 10,
+      "title": "Strategy Evolution",
+      "section": "Strategy",
+      "layout": "content",
+      "description": "How DDN strategy has evolved over time",
+      "tags": [
+        "strategy",
+        "evolution",
+        "history"
+      ],
+      "previewUrl": "/render/strategy?slide=10&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "animation",
+        "text"
+      ]
+    },
+    {
+      "codeName": "strategy-arch-update",
+      "project": "strategy",
+      "slideIndex": 11,
+      "title": "Architecture Update",
+      "section": "Architecture",
+      "layout": "diagram",
+      "description": "Latest architecture updates and changes",
+      "tags": [
+        "architecture",
+        "update",
+        "technical"
+      ],
+      "previewUrl": "/render/strategy?slide=11&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "strategy-integrations",
+      "project": "strategy",
+      "slideIndex": 12,
+      "title": "Architecture & Integrations",
+      "section": "Architecture",
+      "layout": "diagram",
+      "description": "Integration points with partner technologies",
+      "tags": [
+        "architecture",
+        "integrations",
+        "partners"
+      ],
+      "previewUrl": "/render/strategy?slide=12&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "strategy-nixl-dynamo",
+      "project": "strategy",
+      "slideIndex": 13,
+      "title": "NIXL/Dynamo Integration",
+      "section": "Architecture",
+      "layout": "diagram",
+      "description": "NVIDIA NIXL and Dynamo integration details",
+      "tags": [
+        "nvidia",
+        "nixl",
+        "dynamo",
+        "integration"
+      ],
+      "previewUrl": "/render/strategy?slide=13&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "animation",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "strategy-kvcache-dashboard",
+      "project": "strategy",
+      "slideIndex": 14,
+      "title": "KV Cache Dashboard",
+      "section": "Technology",
+      "layout": "dashboard",
+      "description": "Interactive KV Cache performance dashboard",
+      "tags": [
+        "kv-cache",
+        "dashboard",
+        "interactive"
+      ],
+      "previewUrl": "/render/strategy?slide=14&embedded=true",
+      "sourceRef": "ddn-slides-strategy/src/pages/StrategyRoadmap.tsx",
+      "contentTags": [
+        "interactive",
+        "chart",
+        "animation"
+      ]
+    },
+    {
+      "codeName": "tomer-title",
+      "project": "tomer",
+      "slideIndex": 1,
+      "title": "Infinia Technical Overview",
+      "section": "Introduction",
+      "layout": "hero",
+      "description": "Infinia technical deep dive title slide",
+      "tags": [
+        "title",
+        "hero",
+        "infinia"
+      ],
+      "previewUrl": "/render/tomer?slide=1&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide01_Title.tsx",
+      "contentTags": [
+        "animation",
+        "image"
+      ]
+    },
+    {
+      "codeName": "tomer-arch-beginning",
+      "project": "tomer",
+      "slideIndex": 7,
+      "title": "Architecture Beginning",
+      "section": "Architecture",
+      "layout": "diagram",
+      "description": "How the architecture started and evolved",
+      "tags": [
+        "architecture",
+        "history",
+        "evolution"
+      ],
+      "previewUrl": "/render/tomer?slide=2&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide07_ArchitectureBeginning.tsx",
+      "contentTags": [
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "tomer-arch-ai",
+      "project": "tomer",
+      "slideIndex": 8,
+      "title": "Architecture AI Era",
+      "section": "Architecture",
+      "layout": "diagram",
+      "description": "Architecture adapted for the AI era",
+      "tags": [
+        "architecture",
+        "ai",
+        "modern"
+      ],
+      "previewUrl": "/render/tomer?slide=3&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide08_ArchitectureAI.tsx",
+      "contentTags": [
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "tomer-metadata-challenge",
+      "project": "tomer",
+      "slideIndex": 11,
+      "title": "Metadata Challenge",
+      "section": "Data Plane",
+      "layout": "content",
+      "description": "The metadata challenge in distributed storage",
+      "tags": [
+        "metadata",
+        "challenge",
+        "distributed"
+      ],
+      "previewUrl": "/render/tomer?slide=4&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide11_MetadataChallenge.tsx",
+      "contentTags": [
+        "text",
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "tomer-metadata-comparison",
+      "project": "tomer",
+      "slideIndex": 12,
+      "title": "Metadata Comparison",
+      "section": "Data Plane",
+      "layout": "comparison",
+      "description": "Metadata approach comparison table",
+      "tags": [
+        "metadata",
+        "comparison",
+        "table"
+      ],
+      "previewUrl": "/render/tomer?slide=5&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide12_MetadataComparison.tsx",
+      "contentTags": [
+        "table"
+      ]
+    },
+    {
+      "codeName": "tomer-beptree",
+      "project": "tomer",
+      "slideIndex": 19,
+      "title": "BEPtree Comparison",
+      "section": "Data Plane",
+      "layout": "comparison",
+      "description": "BEPtree data structure comparison",
+      "tags": [
+        "beptree",
+        "comparison",
+        "data-structure"
+      ],
+      "previewUrl": "/render/tomer?slide=6&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide19_BEPtree.tsx",
+      "contentTags": [
+        "table"
+      ]
+    },
+    {
+      "codeName": "tomer-global-keyspace",
+      "project": "tomer",
+      "slideIndex": 20,
+      "title": "Global Keyspace",
+      "section": "Data Plane",
+      "layout": "diagram",
+      "description": "Global keyspace design and distribution",
+      "tags": [
+        "keyspace",
+        "global",
+        "distribution"
+      ],
+      "previewUrl": "/render/tomer?slide=7&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide20_GlobalKeyspace.tsx",
+      "contentTags": [
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "tomer-easy-management",
+      "project": "tomer",
+      "slideIndex": 26,
+      "title": "Easy Management",
+      "section": "Control Plane",
+      "layout": "content",
+      "description": "Simplified management interface and operations",
+      "tags": [
+        "management",
+        "operations",
+        "simplicity"
+      ],
+      "previewUrl": "/render/tomer?slide=8&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide26_EasyManagement.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "tomer-containerized",
+      "project": "tomer",
+      "slideIndex": 27,
+      "title": "Containerized Services",
+      "section": "Control Plane",
+      "layout": "diagram",
+      "description": "Containerized microservices architecture",
+      "tags": [
+        "containers",
+        "microservices",
+        "kubernetes"
+      ],
+      "previewUrl": "/render/tomer?slide=9&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide27_ContainerizedServices.tsx",
+      "contentTags": [
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "tomer-multitenancy",
+      "project": "tomer",
+      "slideIndex": 30,
+      "title": "Multi-Tenancy",
+      "section": "Control Plane",
+      "layout": "section",
+      "description": "Multi-tenancy section introduction",
+      "tags": [
+        "multi-tenancy",
+        "section"
+      ],
+      "previewUrl": "/render/tomer?slide=10&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide30_MultiTenancy.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "tomer-capability-matrix",
+      "project": "tomer",
+      "slideIndex": 40,
+      "title": "Capability Matrix",
+      "section": "Control Plane",
+      "layout": "table",
+      "description": "Feature capability matrix across services",
+      "tags": [
+        "capability",
+        "matrix",
+        "comparison"
+      ],
+      "previewUrl": "/render/tomer?slide=11&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide40_CapabilityMatrix.tsx",
+      "contentTags": [
+        "table"
+      ]
+    },
+    {
+      "codeName": "tomer-current-limits",
+      "project": "tomer",
+      "slideIndex": 41,
+      "title": "Current Limits",
+      "section": "Control Plane",
+      "layout": "table",
+      "description": "Current system limits and constraints",
+      "tags": [
+        "limits",
+        "constraints",
+        "specs"
+      ],
+      "previewUrl": "/render/tomer?slide=12&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide41_CurrentLimits.tsx",
+      "contentTags": [
+        "table"
+      ]
+    },
+    {
+      "codeName": "tomer-embedded-vs-native",
+      "project": "tomer",
+      "slideIndex": 46,
+      "title": "Embedded vs Native",
+      "section": "Data Services",
+      "layout": "comparison",
+      "description": "Embedded vs native data services comparison",
+      "tags": [
+        "embedded",
+        "native",
+        "comparison"
+      ],
+      "previewUrl": "/render/tomer?slide=13&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide46_EmbeddedVsNative.tsx",
+      "contentTags": [
+        "table"
+      ]
+    },
+    {
+      "codeName": "tomer-native-data-services",
+      "project": "tomer",
+      "slideIndex": 48,
+      "title": "Native Data Services",
+      "section": "Data Services",
+      "layout": "content",
+      "description": "Native data services architecture and benefits",
+      "tags": [
+        "native",
+        "data-services",
+        "benefits"
+      ],
+      "previewUrl": "/render/tomer?slide=14&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide48_NativeDataServices.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "tomer-s3-compat",
+      "project": "tomer",
+      "slideIndex": 50,
+      "title": "S3 Compatibility",
+      "section": "Data Services",
+      "layout": "table",
+      "description": "S3 API compatibility matrix",
+      "tags": [
+        "s3",
+        "compatibility",
+        "api"
+      ],
+      "previewUrl": "/render/tomer?slide=15&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide50_S3Compatibility.tsx",
+      "contentTags": [
+        "table"
+      ]
+    },
+    {
+      "codeName": "tomer-red-sql",
+      "project": "tomer",
+      "slideIndex": 53,
+      "title": "RED SQL",
+      "section": "Data Services",
+      "layout": "feature",
+      "description": "RED SQL query engine integration",
+      "tags": [
+        "red-sql",
+        "query",
+        "analytics"
+      ],
+      "previewUrl": "/render/tomer?slide=16&embedded=true",
+      "sourceRef": "ddn-slides-tomer/src/slides/Slide53_REDSQL.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "template-title",
+      "project": "template",
+      "slideIndex": 1,
+      "title": "Title",
+      "section": "Layouts",
+      "layout": "hero",
+      "description": "Template title slide layout",
+      "tags": [
+        "title",
+        "hero",
+        "template"
+      ],
+      "previewUrl": "/render/template?slide=1&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide01_Title.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "template-outline",
+      "project": "template",
+      "slideIndex": 2,
+      "title": "Outline",
+      "section": "Layouts",
+      "layout": "outline",
+      "description": "Template outline slide layout",
+      "tags": [
+        "outline",
+        "agenda",
+        "template"
+      ],
+      "previewUrl": "/render/template?slide=2&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide02_Outline.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "template-content",
+      "project": "template",
+      "slideIndex": 4,
+      "title": "Content Example",
+      "section": "Layouts",
+      "layout": "content",
+      "description": "Template content slide layout",
+      "tags": [
+        "content",
+        "text",
+        "template"
+      ],
+      "previewUrl": "/render/template?slide=4&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide04_Content.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "template-bullets",
+      "project": "template",
+      "slideIndex": 5,
+      "title": "Bullet Points",
+      "section": "Layouts",
+      "layout": "bullets",
+      "description": "Template bullet points layout",
+      "tags": [
+        "bullets",
+        "list",
+        "template"
+      ],
+      "previewUrl": "/render/template?slide=5&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide05_Bullets.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "template-diagram",
+      "project": "template",
+      "slideIndex": 6,
+      "title": "Diagram",
+      "section": "Layouts",
+      "layout": "diagram",
+      "description": "Template diagram slide layout",
+      "tags": [
+        "diagram",
+        "visual",
+        "template"
+      ],
+      "previewUrl": "/render/template?slide=6&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide06_Diagram.tsx",
+      "contentTags": [
+        "diagram"
+      ]
+    },
+    {
+      "codeName": "template-feature-grid",
+      "project": "template",
+      "slideIndex": 7,
+      "title": "Feature Grid",
+      "section": "Layouts",
+      "layout": "feature-grid",
+      "description": "Template feature grid layout",
+      "tags": [
+        "feature-grid",
+        "grid",
+        "template"
+      ],
+      "previewUrl": "/render/template?slide=7&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide07_FeatureGrid.tsx",
+      "contentTags": [
+        "text"
+      ]
+    },
+    {
+      "codeName": "template-generative-ai",
+      "project": "template",
+      "slideIndex": 8,
+      "title": "Generative AI",
+      "section": "Use Cases",
+      "layout": "hero-image",
+      "description": "Generative AI use case with full-bleed hero image",
+      "tags": [
+        "use-case",
+        "ai",
+        "hero-image",
+        "generative"
+      ],
+      "previewUrl": "/render/template?slide=8&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide08_GenerativeAI.tsx",
+      "contentTags": [
+        "image",
+        "animation"
+      ]
+    },
+    {
+      "codeName": "template-autonomous-vehicles",
+      "project": "template",
+      "slideIndex": 9,
+      "title": "Autonomous Vehicles",
+      "section": "Use Cases",
+      "layout": "hero-image",
+      "description": "Autonomous vehicles use case with cinematic hero image",
+      "tags": [
+        "use-case",
+        "autonomous",
+        "vehicles",
+        "hero-image"
+      ],
+      "previewUrl": "/render/template?slide=9&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide09_AutonomousVehicles.tsx",
+      "contentTags": [
+        "image",
+        "animation"
+      ]
+    },
+    {
+      "codeName": "template-gpu-memory",
+      "project": "template",
+      "slideIndex": 10,
+      "title": "GPU Memory Pooling",
+      "section": "Use Cases",
+      "layout": "hero-image",
+      "description": "GPU memory pooling technology showcase with hero image",
+      "tags": [
+        "technology",
+        "gpu",
+        "memory",
+        "hero-image"
+      ],
+      "previewUrl": "/render/template?slide=10&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide10_GPUMemory.tsx",
+      "contentTags": [
+        "image",
+        "animation"
+      ]
+    },
+    {
+      "codeName": "template-drug-discovery",
+      "project": "template",
+      "slideIndex": 11,
+      "title": "Drug Discovery",
+      "section": "Use Cases",
+      "layout": "hero-image",
+      "description": "Drug discovery life sciences use case with hero image",
+      "tags": [
+        "use-case",
+        "life-sciences",
+        "drug-discovery",
+        "hero-image"
+      ],
+      "previewUrl": "/render/template?slide=11&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide11_DrugDiscovery.tsx",
+      "contentTags": [
+        "image",
+        "animation"
+      ]
+    },
+    {
+      "codeName": "template-genomics",
+      "project": "template",
+      "slideIndex": 12,
+      "title": "Genomics",
+      "section": "Use Cases",
+      "layout": "hero-image",
+      "description": "Genomics life sciences use case with hero image",
+      "tags": [
+        "use-case",
+        "life-sciences",
+        "genomics",
+        "hero-image"
+      ],
+      "previewUrl": "/render/template?slide=12&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide12_Genomics.tsx",
+      "contentTags": [
+        "image",
+        "animation"
+      ]
+    },
+    {
+      "codeName": "template-climate-simulation",
+      "project": "template",
+      "slideIndex": 13,
+      "title": "Climate Simulation",
+      "section": "Use Cases",
+      "layout": "hero-image",
+      "description": "Climate simulation research use case with hero image",
+      "tags": [
+        "use-case",
+        "research",
+        "climate",
+        "hero-image"
+      ],
+      "previewUrl": "/render/template?slide=13&embedded=true",
+      "sourceRef": "ddn-slides-template/src/slides/Slide13_ClimateSimulation.tsx",
+      "contentTags": [
+        "image",
+        "animation"
+      ]
+    }
+  ]
+}

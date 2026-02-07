@@ -1,0 +1,111 @@
+/* ============================================
+   SLIDE PRESENTATION SYSTEM
+   DDN Design System - articulat-cf font
+   ============================================ */
+
+/* Scroll Mode - slide styling when not in presentation */
+.scrollSlide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px 40px;
+  position: relative;
+}
+
+.scrollSlide > section {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 48px;
+  max-width: 1400px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Slide Wrapper - handles visibility */
+.slideWrapper {
+  position: fixed;
+  top: 64px; /* Below nav */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-page);
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slideWrapper.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slideWrapper.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 16:9 Container - centered vertically and horizontally */
+.slideContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100vw - 40px);
+  height: calc(100vh - 64px - 20px);
+  max-width: calc((100vh - 64px - 20px) * 16 / 9);
+  max-height: calc(100vh - 64px - 20px);
+  aspect-ratio: 16 / 9;
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    0 12px 24px rgba(0, 0, 0, 0.04),
+    0 24px 48px rgba(0, 0, 0, 0.06);
+}
+
+/* Content wrapper - scales to fit */
+.slideContent {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transform-origin: center center;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  font-family: 'articulat-cf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Override section styles in presentation mode */
+.slideContent > section,
+.slideContent > div {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1200px) {
+  .slideContainer {
+    width: calc(100vw - 32px);
+    height: calc(100vh - 64px - 16px);
+    max-width: calc((100vh - 64px - 16px) * 16 / 9);
+    max-height: calc(100vh - 64px - 16px);
+  }
+}
+
+@media (max-width: 900px) {
+  .slideContainer {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 64px - 8px);
+    max-width: calc((100vh - 64px - 8px) * 16 / 9);
+    max-height: calc(100vh - 64px - 8px);
+    border-radius: 10px;
+  }
+}

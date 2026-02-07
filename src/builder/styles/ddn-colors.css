@@ -1,0 +1,65 @@
+:root {
+  /* Text Colors */
+  --text-dark: #201E1E;
+  --text-light: #FFFFFF;
+
+  /* Brand Red */
+  --brand-50: #FF1F12;
+  --brand-100: #FFE0E3;
+  --brand-200: #FFC6CB;
+  --brand-300: #FF9EA6;
+  --brand-400: #FF6572;
+  --brand-500: #FE3546;
+  --brand-600: #ED2738;
+  --brand-700: #C60F1F;
+  --brand-800: #A4101D;
+  --brand-900: #87151F;
+
+  /* Neutrals (DDN Black) */
+  --neutral-0: #FFFFFF;
+  --neutral-25: #F5F6F8;
+  --neutral-50: #F8F7F7;
+  --neutral-100: #F0EEEE;
+  --neutral-200: #DDDADA;
+  --neutral-300: #B7BABA;
+  --neutral-400: #9C9A94;
+  --neutral-500: #807778;
+  --neutral-600: #686162;
+  --neutral-700: #494343;
+  --neutral-800: #3F3B3C;
+  --neutral-900: #201E1E;
+  --neutral-1000: #000000;
+
+  /* Orange */
+  --orange-600: #FF7600;
+
+  /* Deep Blue */
+  --deep-blue-600: #455D84;
+  --deep-blue-700: #374967;
+
+  /* Blue */
+  --blue-600: #1A81AF;
+
+  /* Status */
+  --status-success: #00C280;
+  --status-error: #ED2738;
+  --status-warning-1: #FEC600;
+  --status-warning-2: #FF7600;
+  --status-informative: #1A81AF;
+
+  /* Project Colors */
+  --project-exascaler: #00C280;
+  --project-exascaler-rgb: 0, 194, 128;
+  --project-strategy: #70C5E8;
+  --project-strategy-base-rgb: 26, 129, 175;
+  --project-tomer: #FF7600;
+  --project-tomer-rgb: 255, 118, 0;
+  --project-template: #ED2738;
+  --project-template-rgb: 237, 39, 56;
+
+  /* Transparent Variants */
+  --dark-transparent-40: rgba(32, 30, 30, 0.40);
+  --dark-transparent-75: rgba(32, 30, 30, 0.75);
+  --light-transparent-40: rgba(255, 255, 255, 0.40);
+  --light-transparent-75: rgba(255, 255, 255, 0.75);
+}

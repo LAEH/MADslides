@@ -1,0 +1,36 @@
+/* Slide 26: Easy Management */
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.featureCard {
+  background: var(--surface-primary);
+  border: 2px solid var(--neutral-200, #DDDADA);
+  border-radius: 18px;
+  padding: 36px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.featureCard:hover {
+  border-color: var(--brand-600, #ED2738);
+  transform: translateY(-2px);
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--deep-blue-800, #32415A);
+  margin-bottom: 16px;
+}
+
+.featureCard p {
+  font-size: 1.25rem;
+  color: var(--neutral-600, #686162);
+  line-height: 1.55;
+}

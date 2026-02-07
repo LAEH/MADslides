@@ -1,0 +1,92 @@
+/* Slide 53: RED SQL */
+
+.content {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.description h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--deep-blue-800, #32415A);
+  margin-bottom: 20px;
+}
+
+.description ul {
+  list-style: disc;
+  padding-left: 28px;
+  margin: 0;
+}
+
+.description li {
+  font-size: 1.3rem;
+  color: var(--neutral-600, #686162);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.dataPlane {
+  background: var(--deep-blue-900, #2E3B4C);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.dataPlaneLabel {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.services {
+  display: flex;
+  gap: 14px;
+}
+
+.services span {
+  padding: 14px 28px;
+  background: var(--deep-blue-700, #455571);
+  color: white;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.services span.highlight {
+  background: var(--brand-600, #ED2738);
+}
+
+.examples h4 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--deep-blue-800, #32415A);
+  margin-bottom: 20px;
+}
+
+.codeBlock {
+  background: var(--neutral-900, #201E1E);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 18px;
+  overflow-x: auto;
+}
+
+.codeBlock code {
+  font-family: 'Geist Mono', monospace;
+  font-size: 1.1rem;
+  color: white;
+  line-height: 1.7;
+}
+
+.comment {
+  color: var(--neutral-500, #7A7374);
+}
+
+.keyword {
+  color: var(--brand-400, #FF7A85);
+}

@@ -1,0 +1,109 @@
+/* Slide 42: Administration Federation */
+
+.federationDiagram {
+  width: 100%;
+  max-width: 1150px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.realmLevel,
+.tenantsLevel,
+.subtenantsLevel,
+.dataServicesLevel {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.levelLabel {
+  width: 140px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--deep-blue-800, #32415A);
+  text-align: right;
+}
+
+.box {
+  background: var(--brand-600, #ED2738);
+  color: white;
+  padding: 18px 36px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.tenantGroup {
+  display: flex;
+  gap: 36px;
+  flex: 1;
+}
+
+.tenantBox {
+  background: var(--deep-blue-900, #2E3B4C);
+  color: white;
+  padding: 18px 32px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 160px;
+}
+
+.tenantName {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.adminLabel {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.subtenantGroup {
+  display: flex;
+  gap: 36px;
+  flex: 1;
+}
+
+.subtenantCluster {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 18px;
+  background: var(--neutral-100, #F0EEEE);
+  border-radius: 12px;
+}
+
+.subtenantBox {
+  background: var(--deep-blue-700, #455571);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.staLabel {
+  font-size: 0.95rem;
+  color: var(--neutral-600, #686162);
+  margin-left: 14px;
+}
+
+.dataServiceRow {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.dataServiceBox {
+  background: var(--neutral-200, #DDDADA);
+  color: var(--text-dark, #201E1E);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
