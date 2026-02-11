@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "madslides",
+    "site": "laeh-madslides",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
