@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ChevronLeft, ChevronRight, Code2, Tag, FolderOpen, Layout } from 'lucide-react'
+import { ArrowLeft, ChevronLeft, ChevronRight, Copy, FolderOpen, Layout, Tag } from 'lucide-react'
 import { ease } from '../config/motion'
 import { useRegistry } from '../context/RegistryContext'
 import { useDeletedSlides } from '../context/DeletedSlidesContext'
@@ -95,86 +95,60 @@ export default function SlidePreview() {
           </div>
         </motion.div>
 
-        {/* Right: Metadata Panel */}
-        <motion.div
-          className="space-y-6"
+        {/* Right: Metadata Sidebar */}
+        <motion.aside
+          className="slide-detail-sidebar"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15, ease: ease.out }}
         >
-          {/* Code Name */}
-          <div className="glass-card p-6 cursor-default">
-            <div className="flex items-center gap-2 mb-3">
-              <Code2 size={14} className="text-tertiary" />
-              <span className="text-xs text-tertiary uppercase tracking-wider font-semibold">
-                Code Name
-              </span>
-            </div>
-            <div className="text-2xl font-mono font-bold text-primary mb-4 break-all">
-              {slide.codeName}
-            </div>
-            <CopyButton text={slide.codeName} label="Copy code name" />
+          {/* Code Name + Badge */}
+          <div className="slide-detail-section">
+            <Badge project={slide.project} />
+            <h2 className="slide-detail-codename">{slide.codeName}</h2>
+            <p className="slide-detail-description">{slide.description}</p>
           </div>
 
-          {/* Claude Prompt */}
-          <div className="glass-card p-6 cursor-default">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs text-tertiary uppercase tracking-wider font-semibold">
-                Claude Prompt
-              </span>
-            </div>
-            <pre className="text-xs text-secondary font-mono leading-relaxed bg-hover rounded-lg p-4 whitespace-pre-wrap mb-4">
-              {claudePrompt}
-            </pre>
-            <CopyButton text={claudePrompt} label="Copy prompt" />
+          <div className="slide-detail-divider" />
+
+          {/* Quick Copy Actions */}
+          <div className="slide-detail-section">
+            <CopyButton text={slide.codeName} label="Copy code name" />
+            <CopyButton text={claudePrompt} label="Copy Claude prompt" />
           </div>
+
+          <div className="slide-detail-divider" />
 
           {/* Metadata */}
-          <div className="glass-card p-6 space-y-4 cursor-default">
-            <div className="flex items-center gap-2">
-              <Badge project={slide.project} />
+          <div className="slide-detail-section slide-detail-meta">
+            <div className="slide-detail-meta-row">
+              <FolderOpen size={13} />
+              <span className="slide-detail-meta-label">Section</span>
+              <span className="slide-detail-meta-value">{slide.section}</span>
             </div>
-
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-3 text-secondary">
-                <FolderOpen size={14} className="text-tertiary shrink-0" />
-                <span className="text-tertiary">Section:</span>
-                <span className="text-primary">{slide.section}</span>
-              </div>
-              <div className="flex items-center gap-3 text-secondary">
-                <Layout size={14} className="text-tertiary shrink-0" />
-                <span className="text-tertiary">Layout:</span>
-                <span className="text-primary">{slide.layout}</span>
-              </div>
-              <div className="flex items-start gap-3 text-secondary">
-                <Tag size={14} className="text-tertiary shrink-0 mt-0.5" />
-                <span className="text-tertiary">Tags:</span>
-                <div className="flex flex-wrap gap-1.5">
-                  {slide.tags.map(tag => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 rounded-full bg-hover text-secondary text-xs font-mono"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="slide-detail-meta-row">
+              <Layout size={13} />
+              <span className="slide-detail-meta-label">Layout</span>
+              <span className="slide-detail-meta-value">{slide.layout}</span>
             </div>
-
-            <div className="pt-3 border-t border-border-default">
-              <p className="text-xs text-tertiary leading-relaxed">
-                {slide.description}
-              </p>
-            </div>
-
-            <div className="pt-2">
-              <p className="text-xs text-tertiary font-mono break-all">
-                {slide.sourceRef}
-              </p>
+            <div className="slide-detail-meta-row" style={{ alignItems: 'flex-start' }}>
+              <Tag size={13} style={{ marginTop: 2 }} />
+              <span className="slide-detail-meta-label">Tags</span>
+              <div className="flex flex-wrap gap-1">
+                {slide.tags.map(tag => (
+                  <span key={tag} className="slide-detail-tag">{tag}</span>
+                ))}
+              </div>
             </div>
           </div>
-        </motion.div>
+
+          <div className="slide-detail-divider" />
+
+          {/* Source ref */}
+          <div className="slide-detail-section">
+            <p className="slide-detail-source">{slide.sourceRef}</p>
+          </div>
+        </motion.aside>
       </div>
     </div>
   )

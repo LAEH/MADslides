@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from './builder/context/ThemeContext'
 import App from './App'
+import './builder/styles/global.css'
 import './design-system/theme.css'
 import './builder/styles/builder.css'
 

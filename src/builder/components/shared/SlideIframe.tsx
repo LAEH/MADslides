@@ -7,6 +7,7 @@ interface SlideIframeProps {
   onLoad?: () => void
   staticMode?: boolean
   theme?: 'light' | 'dark'
+  eager?: boolean
 }
 
 const SLIDE_W = 1920
@@ -32,6 +33,7 @@ export default function SlideIframe({
   onLoad,
   staticMode = false,
   theme,
+  eager = false,
 }: SlideIframeProps) {
   const [loaded, setLoaded] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -39,8 +41,13 @@ export default function SlideIframe({
   const [ready, setReady] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
-  // Lazy load with IntersectionObserver
+  // Lazy load with IntersectionObserver (skipped when eager)
   useEffect(() => {
+    if (eager) {
+      setIsVisible(true)
+      return
+    }
+
     const el = containerRef.current
     if (!el) return
 
@@ -58,7 +65,7 @@ export default function SlideIframe({
 
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
+  }, [eager])
 
 
   const src = useMemo(
@@ -125,7 +132,7 @@ export default function SlideIframe({
           key={src}
           src={src}
           title={title}
-          loading="lazy"
+          loading={eager ? undefined : 'lazy'}
           style={{
             position: 'absolute',
             top: '50%',

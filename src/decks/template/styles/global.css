@@ -1,5 +1,5 @@
 /* Font imports */
-@import url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-mono/style.min.css');
+/* Geist Mono – loaded via theme.css @font-face */
 @import './ddn-colors.css';
 
 /* Design Tokens */

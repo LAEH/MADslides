@@ -4,7 +4,6 @@ import { RegistryProvider } from './builder/context/RegistryContext'
 import { MyDeckProvider } from './builder/context/MyDeckContext'
 import { DeletedSlidesProvider } from './builder/context/DeletedSlidesContext'
 import BuilderLayout from './builder/components/BuilderLayout'
-import AllSlidesBrowser from './builder/pages/AllSlidesBrowser'
 import SlidePreview from './builder/pages/SlidePreview'
 import MyDeck from './builder/pages/MyDeck'
 import AboutPage from './builder/pages/AboutPage'
@@ -65,7 +64,7 @@ export default function App() {
         <DeletedSlidesProvider>
           <Routes>
             <Route element={<BuilderLayout />}>
-              <Route path="/" element={<AllSlidesBrowser />} />
+              <Route index element={<></>} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/my-slides" element={<MyDeck />} />
               <Route path="/:codeName" element={<SlidePreview />} />

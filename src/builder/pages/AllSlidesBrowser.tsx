@@ -8,11 +8,31 @@ import { useRegistry } from '../context/RegistryContext'
 import { useDeletedSlides } from '../context/DeletedSlidesContext'
 import { useMyDeck } from '../context/MyDeckContext'
 import { useTheme } from '../context/ThemeContext'
+import { useIframePreloader } from '../hooks/useIframePreloader'
 import SearchInput from '../components/shared/SearchInput'
 import SlideIframe from '../components/shared/SlideIframe'
+import SlideGridLoader from '../components/shared/SlideGridLoader'
+
+// Stagger variants for grid reveal
+const gridRevealVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.03 },
+  },
+}
+
+const cardRevealVariants = {
+  hidden: { opacity: 0, y: 24, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: ease.out },
+  },
+}
 
 export default function AllSlidesBrowser() {
-  const { projects } = useRegistry()
+  const { projects, totalSlides } = useRegistry()
   const {
     query,
     setQuery,
@@ -27,18 +47,34 @@ export default function AllSlidesBrowser() {
   const [deleteMode, setDeleteMode] = useState(false)
   const [showDeleted, setShowDeleted] = useState(false)
 
+  const { progress, loadedCount, phase, markLoaded } = useIframePreloader(totalSlides)
+
   // Filter results based on deleted status
   const visibleResults = showDeleted
     ? results.filter(s => isDeleted(s.codeName))
     : results.filter(s => !isDeleted(s.codeName))
 
+  const isLoading = phase === 'loading'
+
   return (
-    <div className="max-w-[1400px] mx-auto px-6 py-8">
-      {/* Header */}
+    <div className="max-w-[1400px] mx-auto px-6 py-8" style={{ position: 'relative' }}>
+      {/* Loading overlay */}
+      <AnimatePresence>
+        {isLoading && (
+          <SlideGridLoader
+            progress={progress}
+            loadedCount={loadedCount}
+            totalCount={totalSlides}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Header — hidden during loading */}
       <motion.div
         className="mb-6"
+        style={isLoading ? { opacity: 0, pointerEvents: 'none' as const } : undefined}
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 12 : 0 }}
         transition={{ duration: 0.4, ease: ease.out }}
       >
         <div className="flex items-center justify-between">
@@ -62,11 +98,12 @@ export default function AllSlidesBrowser() {
         </div>
       </motion.div>
 
-      {/* Filter Bar */}
+      {/* Filter Bar — hidden during loading */}
       <motion.div
         className="filter-bar mb-6"
+        style={isLoading ? { opacity: 0, pointerEvents: 'none' as const } : undefined}
         initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 8 : 0 }}
         transition={{ duration: 0.4, delay: 0.1, ease: ease.out }}
       >
         <SearchInput value={query} onChange={setQuery} />
@@ -99,7 +136,7 @@ export default function AllSlidesBrowser() {
       </motion.div>
 
       {/* Results - flat grid */}
-      {visibleResults.length === 0 ? (
+      {visibleResults.length === 0 && !isLoading ? (
         <div className="empty-state py-20">
           <p className="text-lg mb-2">
             {showDeleted ? 'No deleted slides' : 'No slides found'}
@@ -109,13 +146,17 @@ export default function AllSlidesBrowser() {
           </p>
         </div>
       ) : (
-        <motion.div className="minimap-grid" layout>
+        <motion.div
+          className="minimap-grid"
+          variants={gridRevealVariants}
+          initial="hidden"
+          animate={isLoading ? 'hidden' : 'visible'}
+        >
           <AnimatePresence>
           {visibleResults.map(slide => (
             <motion.div
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                layout={!isLoading}
+                variants={cardRevealVariants}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.2 }}
                 key={slide.codeName}
@@ -128,6 +169,8 @@ export default function AllSlidesBrowser() {
                     title={slide.title}
                     staticMode
                     theme={theme}
+                    eager
+                    onLoad={() => markLoaded(slide.codeName)}
                   />
                 </div>
               </Link>

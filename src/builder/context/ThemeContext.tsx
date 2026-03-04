@@ -12,12 +12,11 @@ const ThemeContext = createContext<ThemeContextType | null>(null)
 const STORAGE_KEY = 'ddn-theme'
 
 function getInitialTheme(): Theme {
-  // Default to dark - only use light if explicitly stored
   try {
     const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored === 'light') return 'light'
+    if (stored === 'dark') return 'dark'
   } catch { /* ignore */ }
-  return 'dark'
+  return 'light'
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
@@ -25,11 +24,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const root = document.documentElement
-    if (theme === 'dark') {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
-    }
+    // Builder CSS uses .dark class for dark overrides
+    root.classList.toggle('dark', theme === 'dark')
+    // Deck/design-tokens CSS uses [data-theme] attribute
+    root.setAttribute('data-theme', theme)
     try {
       localStorage.setItem(STORAGE_KEY, theme)
     } catch { /* ignore */ }

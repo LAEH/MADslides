@@ -1,7 +1,6 @@
 /* Font imports must be first */
 /* Adobe Articulat CF loaded via Typekit in index.html */
-/* Geist Mono from Vercel */
-@import url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-mono/style.min.css');
+/* Geist Mono – loaded via theme.css @font-face */
 
 /* DDN Official Color Palette */
 @import './ddn-colors.css';

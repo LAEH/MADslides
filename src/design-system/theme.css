@@ -1,7 +1,13 @@
 /* Font imports must be first */
 /* Adobe Articulat CF loaded via Typekit in index.html */
-/* Geist Mono from Vercel */
-@import url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-mono/style.min.css');
+/* Geist Mono – self-hosted */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* DDN Official Color Palette - Inlined for Single Source of Truth */
 :root {
