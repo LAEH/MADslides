@@ -11,4 +11,32 @@ export default defineConfig({
       localsConvention: 'camelCase',
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // Vendor: React core
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'vendor-react'
+          }
+          // Vendor: framer-motion (heavy)
+          if (id.includes('node_modules/framer-motion')) {
+            return 'vendor-motion'
+          }
+          // Vendor: recharts (heavy)
+          if (id.includes('node_modules/recharts') || id.includes('node_modules/d3-')) {
+            return 'vendor-charts'
+          }
+          // Vendor: router
+          if (id.includes('node_modules/react-router')) {
+            return 'vendor-router'
+          }
+          // Vendor: primereact + primeicons
+          if (id.includes('node_modules/primereact') || id.includes('node_modules/primeicons')) {
+            return 'vendor-prime'
+          }
+        },
+      },
+    },
+  },
 })

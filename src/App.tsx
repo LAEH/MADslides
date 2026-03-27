@@ -1,18 +1,12 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
-import { RegistryProvider } from './builder/context/RegistryContext'
-import { MyDeckProvider } from './builder/context/MyDeckContext'
-import { DeletedSlidesProvider } from './builder/context/DeletedSlidesContext'
-import BuilderLayout from './builder/components/BuilderLayout'
-import SlidePreview from './builder/pages/SlidePreview'
-import MyDeck from './builder/pages/MyDeck'
-import AboutPage from './builder/pages/AboutPage'
 
 const ExascalerEntry = lazy(() => import('./decks/exascaler/Entry'))
 const StrategyEntry = lazy(() => import('./decks/strategy/Entry'))
 const TomerEntry = lazy(() => import('./decks/tomer/Entry'))
 const TemplateEntry = lazy(() => import('./decks/template/Entry'))
 const DesignSystemPage = lazy(() => import('./shared/pages/DesignSystemPage'))
+const BuilderShell = lazy(() => import('./builder/BuilderShell'))
 
 function RenderFallback() {
   return (
@@ -57,21 +51,10 @@ export default function App() {
     )
   }
 
-  // Builder routes: full UI with nav, layout, contexts
+  // Builder routes: lazy-loaded with all contexts
   return (
-    <RegistryProvider>
-      <MyDeckProvider>
-        <DeletedSlidesProvider>
-          <Routes>
-            <Route element={<BuilderLayout />}>
-              <Route index element={<></>} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/my-slides" element={<MyDeck />} />
-              <Route path="/:codeName" element={<SlidePreview />} />
-            </Route>
-          </Routes>
-        </DeletedSlidesProvider>
-      </MyDeckProvider>
-    </RegistryProvider>
+    <Suspense fallback={<RenderFallback />}>
+      <BuilderShell />
+    </Suspense>
   )
 }
