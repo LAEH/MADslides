@@ -12,14 +12,19 @@ export default function PasswordGate({ children }: PasswordGateProps) {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [focused, setFocused] = useState(false)
+  const [phase, setPhase] = useState(0)
 
   useEffect(() => {
-    // Check if already authenticated this session
     const verified = sessionStorage.getItem(STORAGE_KEY)
     if (verified === 'true') {
       setIsAuthenticated(true)
     }
     setIsLoading(false)
+    const t1 = setTimeout(() => setPhase(1), 100)
+    const t2 = setTimeout(() => setPhase(2), 400)
+    const t3 = setTimeout(() => setPhase(3), 700)
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3) }
   }, [])
 
   const handleSubmit = (e: FormEvent) => {
@@ -36,161 +41,188 @@ export default function PasswordGate({ children }: PasswordGateProps) {
 
   if (isLoading) {
     return (
-      <div style={styles.container}>
-        <div style={styles.loader} />
+      <div style={overlayStyle} role="status" aria-label="Loading">
+        <div style={spinnerStyle} />
       </div>
     )
   }
 
-  if (!isAuthenticated) {
-    return (
-      <div style={styles.container}>
-        <div style={styles.card}>
-          <div style={styles.logoWrapper}>
-            <img
-              src="/ddn-logo.png"
-              alt="DDN"
-              style={styles.logo}
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none'
+  if (isAuthenticated) {
+    return <>{children}</>
+  }
+
+  return (
+    <div style={overlayStyle}>
+      {/* Ambient rings */}
+      <div style={ringsContainerStyle}>
+        {[0, 1, 2, 3, 4, 5].map(i => (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              width: 300 + i * 180,
+              height: 300 + i * 180,
+              borderRadius: '50%',
+              border: '1px solid rgba(255,255,255,0.06)',
+              opacity: phase >= 1 ? 0.4 : 0,
+              transform: phase >= 1 ? 'scale(1)' : 'scale(0.8)',
+              transition: `all 1.5s cubic-bezier(0.16,1,0.3,1) ${i * 0.12}s`,
+            }}
+          />
+        ))}
+        <div style={{
+          position: 'absolute',
+          width: 500,
+          height: 500,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%)',
+          opacity: phase >= 2 ? 1 : 0,
+          transform: phase >= 2 ? 'scale(1)' : 'scale(0.5)',
+          transition: 'all 1.5s cubic-bezier(0.16,1,0.3,1)',
+        }} />
+      </div>
+
+      <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: 400, padding: '0 32px' }}>
+        {/* Logo */}
+        <div style={{
+          textAlign: 'center',
+          marginBottom: 56,
+          opacity: phase >= 2 ? 1 : 0,
+          transform: phase >= 2 ? 'translateY(0)' : 'translateY(20px)',
+          transition: 'all 0.8s cubic-bezier(0.16,1,0.3,1)',
+        }}>
+          <img
+            src="/logos/ddn/logo-ddn-full-color-on-dark.png"
+            alt="DDN"
+            style={{ height: 44, margin: '0 auto' }}
+          />
+        </div>
+
+        {/* Form */}
+        <form
+          onSubmit={handleSubmit}
+          style={{
+            opacity: phase >= 3 ? 1 : 0,
+            transform: phase >= 3 ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'all 0.8s cubic-bezier(0.16,1,0.3,1)',
+          }}
+        >
+          {/* Glass input container */}
+          <div style={{
+            background: 'rgba(255,255,255,0.07)',
+            backdropFilter: 'blur(20px) saturate(180%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+            borderRadius: 20,
+            padding: 6,
+            border: `1px solid ${error ? 'rgba(237,39,56,0.4)' : focused ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)'}`,
+            transition: 'border-color 0.3s, box-shadow 0.3s',
+            boxShadow: focused
+              ? '0 0 0 4px rgba(255,118,0,0.1), 0 8px 32px rgba(0,0,0,0.2)'
+              : '0 4px 24px rgba(0,0,0,0.15)',
+          }}>
+            <input
+              type="password"
+              value={password}
+              onChange={e => { setPassword(e.target.value); setError(false) }}
+              onFocus={() => setFocused(true)}
+              onBlur={() => setFocused(false)}
+              placeholder="Access code"
+              autoFocus
+              aria-label="Access code"
+              aria-invalid={error || undefined}
+              style={{
+                width: '100%',
+                padding: '16px 22px',
+                fontSize: 18,
+                fontWeight: 500,
+                color: '#fff',
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                boxSizing: 'border-box' as const,
+                fontFamily: 'inherit',
+                letterSpacing: '0.04em',
               }}
             />
           </div>
-          <h1 style={styles.title}>DDN Strategic Roadmap</h1>
-          <p style={styles.subtitle}>NDA Protected Content</p>
 
-          <form onSubmit={handleSubmit} style={styles.form}>
-            <div style={styles.inputWrapper}>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                  setError(false)
-                }}
-                placeholder="Enter access code"
-                style={{
-                  ...styles.input,
-                  ...(error ? styles.inputError : {}),
-                }}
-                autoFocus
-              />
-              {error && (
-                <p style={styles.errorText}>Invalid access code</p>
-              )}
+          {error && (
+            <div role="alert" style={{
+              color: '#FF7600',
+              fontSize: 15,
+              fontWeight: 500,
+              textAlign: 'center',
+              marginTop: 12,
+            }}>
+              Invalid access code
             </div>
-            <button type="submit" style={styles.button}>
-              Access Presentation
-            </button>
-          </form>
+          )}
 
-          <p style={styles.footer}>
-            Contact your DDN representative for access credentials
-          </p>
-        </div>
+          {/* Gradient submit button */}
+          <button
+            type="submit"
+            style={{
+              width: '100%',
+              padding: '17px',
+              fontSize: 18,
+              fontWeight: 650,
+              color: '#fff',
+              background: 'linear-gradient(135deg, #ED2738, #FF7600)',
+              border: 'none',
+              borderRadius: 16,
+              cursor: 'pointer',
+              marginTop: 16,
+              fontFamily: 'inherit',
+              transition: 'transform 0.15s, opacity 0.15s',
+              letterSpacing: '0.01em',
+              boxShadow: '0 4px 16px rgba(237,39,56,0.25)',
+            }}
+            onMouseDown={e => {
+              e.currentTarget.style.transform = 'scale(0.97)'
+              e.currentTarget.style.opacity = '0.9'
+            }}
+            onMouseUp={e => {
+              e.currentTarget.style.transform = 'scale(1)'
+              e.currentTarget.style.opacity = '1'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'scale(1)'
+              e.currentTarget.style.opacity = '1'
+            }}
+          >
+            Enter
+          </button>
+        </form>
       </div>
-    )
-  }
-
-  return <>{children}</>
+    </div>
+  )
 }
 
-const styles: Record<string, React.CSSProperties> = {
-  container: {
-    position: 'fixed',
-    inset: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%)',
-    padding: '24px',
-    zIndex: 99998,
-  },
-  loader: {
-    width: '40px',
-    height: '40px',
-    border: '3px solid rgba(255, 255, 255, 0.1)',
-    borderTopColor: '#ED2738',
-    borderRadius: '50%',
-    animation: 'spin 1s linear infinite',
-  },
-  card: {
-    background: '#ffffff',
-    borderRadius: '24px',
-    padding: '48px 40px',
-    maxWidth: '420px',
-    width: '100%',
-    textAlign: 'center',
-    boxShadow: '0 25px 80px rgba(0, 0, 0, 0.5)',
-  },
-  logoWrapper: {
-    marginBottom: '24px',
-  },
-  logo: {
-    height: '48px',
-    width: 'auto',
-  },
-  title: {
-    fontSize: '24px',
-    fontWeight: 700,
-    color: '#1a1a1a',
-    margin: '0 0 8px 0',
-    letterSpacing: '-0.02em',
-  },
-  subtitle: {
-    fontSize: '14px',
-    color: '#ED2738',
-    fontWeight: 600,
-    margin: '0 0 32px 0',
-    textTransform: 'uppercase',
-    letterSpacing: '0.08em',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '16px',
-  },
-  inputWrapper: {
-    position: 'relative',
-  },
-  input: {
-    width: '100%',
-    padding: '16px 20px',
-    fontSize: '16px',
-    border: '2px solid #e5e5e5',
-    borderRadius: '12px',
-    outline: 'none',
-    transition: 'border-color 0.2s, box-shadow 0.2s',
-    boxSizing: 'border-box',
-  },
-  inputError: {
-    borderColor: '#ED2738',
-    background: 'rgba(237, 39, 56, 0.03)',
-  },
-  errorText: {
-    position: 'absolute',
-    left: 0,
-    bottom: '-24px',
-    fontSize: '13px',
-    color: '#ED2738',
-    margin: 0,
-  },
-  button: {
-    width: '100%',
-    padding: '16px 24px',
-    fontSize: '16px',
-    fontWeight: 600,
-    color: '#ffffff',
-    background: 'linear-gradient(135deg, #ED2738 0%, #c41e2e 100%)',
-    border: 'none',
-    borderRadius: '12px',
-    cursor: 'pointer',
-    transition: 'transform 0.2s, box-shadow 0.2s',
-    marginTop: '8px',
-  },
-  footer: {
-    fontSize: '13px',
-    color: '#888888',
-    margin: '32px 0 0 0',
-  },
+const overlayStyle: React.CSSProperties = {
+  position: 'fixed',
+  inset: 0,
+  background: '#374967',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  zIndex: 99999,
+  fontFamily: "'articulat-cf', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
+}
+
+const ringsContainerStyle: React.CSSProperties = {
+  position: 'absolute',
+  inset: 0,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  pointerEvents: 'none',
+}
+
+const spinnerStyle: React.CSSProperties = {
+  width: 48,
+  height: 48,
+  borderRadius: '50%',
+  border: '2px solid rgba(255,255,255,0.2)',
+  borderTopColor: '#fff',
+  animation: 'spin 1s linear infinite',
 }
