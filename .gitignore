@@ -12,3 +12,5 @@ yarn-error.log*
 
 # Engine
 src/engine/
+
+.firebase/
